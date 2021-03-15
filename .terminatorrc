@@ -1,0 +1,71 @@
+[global_config]
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = DejaVu Sans Mono 10
+    show_titlebar = False
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    use_system_font = False
+  [[FirefoxDev]]
+    background_color = "#0e1011"
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#708284"
+    font = DejaVu Sans Mono 10
+    foreground_color = "#7c8fa4"
+    show_titlebar = False
+    palette = "#002831:#e63853:#5eb83c:#a57706:#359ddf:#d75cff:#4b73a2:#dcdcdc:#001e27:#e1003f:#1d9000:#cd9409:#006fc0:#a200da:#005794:#e2e2e2"
+    use_system_font = False
+  [[Glacier]]
+    background_color = "#0c1115"
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#6c6c6c"
+    font = DejaVu Sans Mono 10
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    palette = "#2e343c:#bd0f2f:#35a770:#fb9435:#1f5872:#bd2523:#778397:#ffffff:#404a55:#bd0f2f:#49e998:#fddf6e:#2a8bc1:#ea4727:#a0b6d3:#ffffff"
+    use_system_font = False
+  [[Material-Ocean]]
+    background_color = "#0f111a"
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#ffcc00"
+    cursor_color_fg = False
+    font = DejaVu Sans Mono 10
+    foreground_color = "#8f93a2"
+    show_titlebar = False
+    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = Material-Ocean
+  [[New Layout]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 960:0
+      maximised = False
+      fullscreen = False
+      size = 960, 1020
+      title = madness ❐ 0 ● 1 zsh
+      last_active_term = 6b156445-6d4b-4f3e-8bed-6fc4ba9ed8ab
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = Material-Ocean
+      uuid = 6b156445-6d4b-4f3e-8bed-6fc4ba9ed8ab
+[plugins]
