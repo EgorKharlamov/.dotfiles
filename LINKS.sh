@@ -14,3 +14,4 @@ ln -sf $DOTFILES_DIR/nvim/.settingsnvimrc ~/.config/nvim/.settingsnvimrc
 ln -sf $DOTFILES_DIR/.gitconfig ~/.gitconfig
 ln -sf $DOTFILES_DIR/tmux/.tmux.conf ~/.tmux.conf
 ln -sf $DOTFILES_DIR/.terminatorrc ~/.config/terminator/config
+ln -sf $DOTFILES_DIR/coc-settings.json ~/.config/nvim/coc-settings.json
