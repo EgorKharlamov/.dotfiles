@@ -19,6 +19,13 @@ Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
+" documentation
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 let g:rainbow_active = 1
@@ -29,6 +36,7 @@ endif
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean'
 colorscheme material
+
 
 " map
 source $HOME/.config/nvim/.mapnvimrc
