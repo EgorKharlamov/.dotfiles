@@ -15,6 +15,10 @@ vmap < S<
 vmap > S>
 vmap tt St
 
+"""""""""" easy align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -35,6 +39,9 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -137,3 +144,7 @@ nnoremap <silent> <Leader>f :Rg<CR>
     \   'git grep --line-number '.shellescape(<q-args>), 0,
     \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 " }}}
+"
+
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
