@@ -8,9 +8,9 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' } " color scheme
 Plug 'tpope/vim-surround' " all about surround :)
 
 """ js/ts dev
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} " this is for auto complete, prettier and tslinting
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " this is for auto complete, prettier and tslinting
 
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-emmet', 'coc-cssmodules']  " list of CoC extensions needed
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-emmet', 'coc-cssmodules', 'coc-vetur', 'coc-go', 'coc-sh']  " list of CoC extensions needed
 
 Plug 'jiangmiao/auto-pairs' "this will auto close ( [ {
 
@@ -24,6 +24,11 @@ Plug 'leafOfTree/vim-vue-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
+Plug 'tomtom/tcomment_vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'tpope/vim-fugitive'
+
 
 " documentation
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
@@ -54,7 +59,6 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
 endif
 
 let g:vim_vue_plugin_load_full_syntax = 1
-let g:vim_vue_plugin_use_scss = 1
 
 " map
 source $HOME/.config/nvim/.mapnvimrc
