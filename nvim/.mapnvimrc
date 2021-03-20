@@ -1,8 +1,8 @@
 inoremap jk <ESC>
-noremap <space>y "+y
-noremap <space>Y "+Y
-noremap <space>p "+p
-noremap <space>P "+P
+noremap <space>y "*y
+noremap <space>Y "*Y
+noremap <space>p "*p
+noremap <space>P "*P
 vmap " S"
 vmap ' S'
 vmap ( S(

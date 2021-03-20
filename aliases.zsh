@@ -14,3 +14,5 @@ alias r="ranger"
 
 alias vueDev="echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
 alias myip="echo 94.73.247.54"
+
+alias giteahelp="echo 'git clone ssh://git@gitea.hecate.dev:2221/egorkharlamov/{repos}'"
