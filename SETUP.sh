@@ -21,3 +21,13 @@ wget https://git.io/v5Zww -O $HOME"/.config/terminator/plugins/terminator-themes
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 #################
+
+### kitty color themes ###
+#clean exists theme
+rm ~/.config/kitty/theme.conf
+
+THEME_NAME="ayu_mirage"
+THEME=https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/$THEME_NAME.conf
+wget "$THEME" -P ~/.config/kitty/kitty-themes/themes
+ln -s ~/.config/kitty/kitty-themes/themes/$THEME_NAME.conf ~/.config/kitty/theme.conf
+##########################
