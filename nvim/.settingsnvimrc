@@ -28,15 +28,24 @@ else
   set signcolumn=yes
 endif
 
-set relativenumber
+set relativenumber number
 set smarttab
 set cindent
 set tabstop=2
 set shiftwidth=2
 set termguicolors
 set expandtab
-set hlsearch
-set ignorecase smartcase
+set ignorecase smartcase hlsearch incsearch
 set showmode
 set numberwidth=1
 set virtualedit=block
+set foldcolumn=0
+set spell spelllang=ru_ru,en_us
+set clipboard=unnamedplus
+
+set lazyredraw
+set laststatus=2
+set title
+set ruler
+set cursorline
+syntax enable
