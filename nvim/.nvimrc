@@ -23,7 +23,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Plug 'govim/govim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 let g:rainbow_active = 1

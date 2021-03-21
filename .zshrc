@@ -107,6 +107,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export LC_ALL=ru_RU.UTF-8
 
-export GOROOT=/usr/local/go  # Set the installation path to go, some installation package will automatically set the default goroot
-export GOPATH=$HOME/go-work   # Default path of installation package
+# export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
