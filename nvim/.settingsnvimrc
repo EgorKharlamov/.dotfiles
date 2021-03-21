@@ -49,3 +49,8 @@ set title
 set ruler
 set cursorline
 syntax enable
+
+" golang formatting
+" autocmd FileType go autocmd BufWritePre <buffer> Fmt
+let g:go_fmt_command = "goimports"
+

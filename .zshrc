@@ -106,3 +106,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export LC_ALL=ru_RU.UTF-8
+
+export GOROOT=/usr/local/go  # Set the installation path to go, some installation package will automatically set the default goroot
+export GOPATH=$HOME/go-work   # Default path of installation package
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
