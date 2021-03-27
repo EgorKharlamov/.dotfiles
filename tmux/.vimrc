@@ -1,3 +1,4 @@
+
 inoremap jk <ESC>
 
 set hlsearch

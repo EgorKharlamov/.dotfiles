@@ -1,33 +1,18 @@
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
+"------------------------------------------------------------------------------"
+"                                      set                                     "
+"------------------------------------------------------------------------------"
 set encoding=utf-8
-
-" TextEdit might fail if hidden is not set.
 set hidden
-
-" Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
-" Give more space for displaying messages.
 set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
 set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
 if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
 else
   set signcolumn=yes
 endif
-
 set relativenumber number
 set smarttab
 set cindent
@@ -39,20 +24,63 @@ set ignorecase smartcase hlsearch incsearch
 set showmode
 set numberwidth=1
 set virtualedit=block
-" set foldcolumn=0
-" set spell spelllang=ru_ru,en_us
-" set clipboard=unnamedplus
-
 set lazyredraw
 set laststatus=2
 set title
 set ruler
 set cursorline
 syntax enable
+filetype plugin on
 
-" golang formatting
-" autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+"------------------------------------------------------------------------------"
+"                                    golang                                    "
+"------------------------------------------------------------------------------"
 let g:go_fmt_command = "goimports"
 
-" let g:go_bin_path = $HOME."/.go/bin"
+
+"------------------------------------------------------------------------------"
+"                                 Theme and CoC                                "
+"------------------------------------------------------------------------------"
+let g:rainbow_active = 1
+syntax enable
+if (has('termguicolors'))
+  set termguicolors
+endif
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'ocean'
+colorscheme material
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
+
+"------------------------------------------------------------------------------"
+"                                      Vue                                     "
+"------------------------------------------------------------------------------"
+let g:vim_vue_plugin_load_full_syntax = 1
+let g:vim_vue_plugin_use_scss = 1
+let g:vim_vue_plugin_use_sass = 1
+let g:vim_vue_plugin_use_typescript = 1
+let g:vim_vue_plugin_has_init_indent = 1
+let g:vim_vue_plugin_highlight_vue_attr = 1
+let g:vim_vue_plugin_highlight_vue_keyword = 1
+let g:vim_vue_plugin_use_foldexpr = 1
+" let g:vim_vue_plugin_custom_blocks = 1
+let g:vim_vue_plugin_debug = 1
+
+
+"------------------------------------------------------------------------------"
+"                                     Folds                                    "
+"------------------------------------------------------------------------------"
+" Keep all folds open when a file is opened
+augroup OpenAllFoldsOnFileOpen
+    autocmd!
+    autocmd BufRead * normal zR
+augroup END
 

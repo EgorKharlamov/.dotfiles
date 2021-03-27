@@ -23,41 +23,19 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'cometsong/commentframe.vim'
 " Plug 'govim/govim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
-let g:rainbow_active = 1
-syntax enable
-if (has('termguicolors'))
-  set termguicolors
-endif
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean'
-colorscheme material
 
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
-
-" vue files highlighting
-let g:vim_vue_plugin_load_full_syntax = 1
-let g:vim_vue_plugin_use_scss = 1
-let g:vim_vue_plugin_use_sass = 1
-let g:vim_vue_plugin_use_typescript = 1
-let g:vim_vue_plugin_has_init_indent = 1
-let g:vim_vue_plugin_highlight_vue_attr = 1
-let g:vim_vue_plugin_highlight_vue_keyword = 1
-let g:vim_vue_plugin_use_foldexpr = 1
-" let g:vim_vue_plugin_custom_blocks = 1
-let g:vim_vue_plugin_debug = 1
-
-" map
+"------------------------------------------------------------------------------"
+"                                      MAP                                     "
+"------------------------------------------------------------------------------"
 source $HOME/.config/nvim/.mapnvimrc
 
-" set
+
+"------------------------------------------------------------------------------"
+"                                      SET                                     "
+"------------------------------------------------------------------------------"
 source $HOME/.config/nvim/.settingsnvimrc

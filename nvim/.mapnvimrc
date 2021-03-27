@@ -3,12 +3,15 @@ inoremap jk <ESC>
 let mapleader=" "
 nmap <leader>e :Explore<CR>
 
-"""""""""" easy align
+"------------------------------------------------------------------------------"
+"                                  easy align                                  "
+"------------------------------------------------------------------------------"
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
-" Coc
-  " 
+"------------------------------------------------------------------------------"
+"                                      CoC                                     "
+"------------------------------------------------------------------------------"
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -146,7 +149,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 
 " }}}
 
-" ### fzf ###
+
+"------------------------------------------------------------------------------"
+"                                      FZF                                     "
+"------------------------------------------------------------------------------"
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 
@@ -229,3 +235,20 @@ let g:user_emmet_settings = {
 
 let g:vue_pre_processors = 'detect_on_enter'
 
+"------------------------------------------------------------------------------"
+"                            Splits and Tabbed Files                           "
+"------------------------------------------------------------------------------"
+set splitbelow splitright
+
+"Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
+
+" Removes pipes | that act as seperators on splits
+set fillchars+=vert:\ 
