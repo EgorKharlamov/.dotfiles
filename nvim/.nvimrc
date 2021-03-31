@@ -26,6 +26,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'cometsong/commentframe.vim'
 " Plug 'govim/govim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 
