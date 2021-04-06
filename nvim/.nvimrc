@@ -27,6 +27,8 @@ Plug 'cometsong/commentframe.vim'
 " Plug 'govim/govim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mhinz/vim-startify'
+Plug 'posva/vim-vue'
+" Plug 'storyn26383/vim-vue'
 
 " Markdown
 Plug 'SirVer/ultisnips'
