@@ -32,6 +32,11 @@ set cursorline
 syntax enable
 filetype plugin on
 
+"------------------------------------------------------------------------------"
+"                                   NerdTREE                                   "
+"------------------------------------------------------------------------------"
+
+" let g:NERDTreeGitStatusConcealBrackets = 1 " default: 0
 
 "------------------------------------------------------------------------------"
 "                                    golang                                    "
@@ -70,13 +75,13 @@ let g:vim_vue_plugin_use_typescript = 1
 let g:vim_vue_plugin_has_init_indent = 1
 let g:vim_vue_plugin_highlight_vue_attr = 1
 let g:vim_vue_plugin_highlight_vue_keyword = 1
-let g:vim_vue_plugin_use_foldexpr = 1
+" let g:vim_vue_plugin_use_foldexpr = 1
 let g:vim_vue_plugin_debug = 1
 
 let g:vue_pre_processors = 'detect_on_enter'
 
 
-autocmd FileType vue syntax sync fromstart
+" autocmd FileType vue syntax sync fromstart
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 
@@ -118,3 +123,13 @@ let g:mkdp_auto_close = 0
 "                                     Netrw                                    "
 "------------------------------------------------------------------------------"
 let g:netrw_banner = 0
+
+
+"------------------------------------------------------------------------------"
+"                                   NERDTree                                   "
+"------------------------------------------------------------------------------"
+" let g:NERDTreeGitStatusConcealBrackets = 1
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif

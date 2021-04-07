@@ -302,4 +302,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "------------------------------------------------------------------------------"
 "                                     Netrw                                    "
 "------------------------------------------------------------------------------"
-nmap <Leader>e :Explore<CR>
+" nmap <Leader>e :Explore<CR>
+
+"------------------------------------------------------------------------------"
+"                                   NerdTREE                                   "
+"------------------------------------------------------------------------------"
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <Leader>e :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
