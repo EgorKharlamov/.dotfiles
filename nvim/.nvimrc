@@ -1,5 +1,5 @@
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'luochen1990/rainbow' " brackets pair colorizer
+" Plug 'luochen1990/rainbow' " brackets pair colorizer
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " color scheme
 Plug 'tpope/vim-surround' " all about surround :)
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " this is for auto complete, prettier and tslinting
@@ -26,12 +26,12 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'cometsong/commentframe.vim'
 Plug 'preservim/nerdtree'  |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons' |
             \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'govim/govim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mhinz/vim-startify'
 Plug 'posva/vim-vue'
+Plug 'metakirby5/codi.vim'
 " Plug 'storyn26383/vim-vue'
 
 " Markdown
@@ -44,7 +44,7 @@ Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
-
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 

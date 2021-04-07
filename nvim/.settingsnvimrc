@@ -33,12 +33,6 @@ syntax enable
 filetype plugin on
 
 "------------------------------------------------------------------------------"
-"                                   NerdTREE                                   "
-"------------------------------------------------------------------------------"
-
-" let g:NERDTreeGitStatusConcealBrackets = 1 " default: 0
-
-"------------------------------------------------------------------------------"
 "                                    golang                                    "
 "------------------------------------------------------------------------------"
 let g:go_fmt_command = "goimports"
@@ -128,8 +122,11 @@ let g:netrw_banner = 0
 "------------------------------------------------------------------------------"
 "                                   NERDTree                                   "
 "------------------------------------------------------------------------------"
-" let g:NERDTreeGitStatusConcealBrackets = 1
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:NERDTreeGitStatusShowIgnored = 1
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$']
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+"     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
