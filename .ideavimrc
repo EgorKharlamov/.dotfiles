@@ -5,6 +5,9 @@ set ignorecase smartcase
 set showmode
 set history=1000
 set surround
+set commentary
+set number
+set relativenumber
 
 " easy system clipboard copy/paste
 noremap <space>y "*y
@@ -14,13 +17,16 @@ noremap <space>P "*P
 
 " easy window navigation
 nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
+" nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
-nnoremap <c-k> <c-w>k
+" nnoremap <c-k> <c-w>k
 nnoremap <a-h> gT
 nnoremap <a-l> gt
 nnoremap <c-s-tab> gT
 nnoremap <c-tab> gt
+
+nnoremap <c-j> <c-d>
+nnoremap <c-k> <c-u>
 
 " clear the search buffer when hitting return
 nnoremap <space><cr> :nohlsearch<cr>
