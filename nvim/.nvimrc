@@ -1,5 +1,5 @@
 call plug#begin(stdpath('data') . '/plugged')
-" Plug 'luochen1990/rainbow' " brackets pair colorizer
+Plug 'luochen1990/rainbow' " brackets pair colorizer
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " color scheme
 Plug 'tpope/vim-surround' " all about surround :)
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " this is for auto complete, prettier and tslinting

@@ -14,5 +14,8 @@ alias r="ranger"
 
 alias vueDev="echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
 alias myip="echo 94.73.247.54"
+alias mysensors="while true; do sensors | grep Core && echo; sleep 5; done"
 
 alias giteahelp="echo 'git clone ssh://git@gitea.hecate.dev:2221/egorkharlamov/{repos}'"
+
+alias igorCheck="curl --location --request GET 'https://shvabe-ms1.mipt.ru/api/getFullname/'"
