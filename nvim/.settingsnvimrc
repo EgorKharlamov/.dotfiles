@@ -42,13 +42,24 @@ let g:go_fmt_command = "goimports"
 "                                 Theme and CoC                                "
 "------------------------------------------------------------------------------"
 let g:rainbow_active = 1
-syntax enable
 if (has('termguicolors'))
   set termguicolors
 endif
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean'
 colorscheme material
+syntax on
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+" augroup SyntaxSettings
+"     autocmd!
+"     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+" augroup END
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
