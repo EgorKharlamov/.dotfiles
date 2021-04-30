@@ -48,14 +48,15 @@ endif
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean'
 colorscheme material
-syntax on
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
 " colorscheme OceanicNext
+"
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
+"
 " augroup SyntaxSettings
 "     autocmd!
 "     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
@@ -73,37 +74,34 @@ endif
 "------------------------------------------------------------------------------"
 "                                      Vue                                     "
 "------------------------------------------------------------------------------"
-" let g:vim_vue_plugin_load_full_syntax = 1
-" let g:vim_vue_plugin_use_scss = 1
-" let g:vim_vue_plugin_use_sass = 1
-" let g:vim_vue_plugin_use_typescript = 1
-" let g:vim_vue_plugin_has_init_indent = 1
-" let g:vim_vue_plugin_highlight_vue_attr = 1
-" let g:vim_vue_plugin_highlight_vue_keyword = 1
-" " let g:vim_vue_plugin_use_foldexpr = 1
-" let g:vim_vue_plugin_debug = 1
-"
-" let g:vue_pre_processors = 'detect_on_enter'
 
-
-" autocmd FileType vue syntax sync fromstart
-" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 let g:vim_vue_plugin_config = { 
       \'syntax': {
-      \   'template': ['html', 'pug'],
+      \   'template': ['html'],
       \   'script': ['javascript', 'typescript'],
-      \   'style': ['scss', 'sass', 'less', 'stylus'],
-      \   'i18n': ['json', 'yaml'],
-      \   'route': 'json',
-      \   'docs': 'markdown',
-      \   'page-query': 'graphql',
+      \   'style': ['scss'],
       \},
-      \'full_syntax': ['scss', 'html'],
-      \'initial_indent': ['script.javascript', 'style', 'yaml'],
+      \'full_syntax': ['scss', 'html', 'javascript', 'typescript'],
+      \'initial_indent': ['script.javascript', 'script.typescript', 'style'],
       \'attribute': 1,
       \'keyword': 1,
-      \'foldexpr': 0,
       \}
+
+" let g:vim_vue_plugin_config = { 
+"       \'syntax': {
+"       \   'template': ['html', 'pug'],
+"       \   'script': ['javascript', 'typescript'],
+"       \   'style': ['scss', 'sass'],
+"       \   'i18n': ['json', 'yaml'],
+"       \   'route': 'json',
+"       \   'docs': 'markdown',
+"       \   'page-query': 'graphql',
+"       \},
+"       \'full_syntax': ['scss', 'html', 'javascript', 'typescript'],
+"       \'initial_indent': ['script.javascript', 'style', 'yaml'],
+"       \'attribute': 1,
+"       \'keyword': 1,
+"       \}
 
 
 "------------------------------------------------------------------------------"
