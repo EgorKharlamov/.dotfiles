@@ -26,7 +26,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 #clean exists theme
 rm ~/.config/kitty/theme.conf
 
-THEME_NAME="ayu_mirage"
+THEME_NAME="AlienBlood"
 THEME=https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/$THEME_NAME.conf
 wget "$THEME" -P ~/.config/kitty/kitty-themes/themes
 ln -s ~/.config/kitty/kitty-themes/themes/$THEME_NAME.conf ~/.config/kitty/theme.conf

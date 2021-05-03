@@ -42,16 +42,29 @@ let g:go_fmt_command = "goimports"
 "                                 Theme and CoC                                "
 "------------------------------------------------------------------------------"
 let g:rainbow_active = 1
+
+set t_Co=256
+" set cursorline
+" let g:airline_theme='onehalfdark'
+" colorscheme onehalfdark
+"
+" if exists('+termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
+
 if (has('termguicolors'))
   set termguicolors
 endif
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean'
 colorscheme material
+
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
 " colorscheme OceanicNext
-"
+
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
@@ -79,7 +92,7 @@ let g:vim_vue_plugin_config = {
       \'syntax': {
       \   'template': ['html'],
       \   'script': ['javascript', 'typescript'],
-      \   'style': ['scss'],
+      \   'style': ['scss', 'css'],
       \},
       \'full_syntax': ['scss', 'html', 'javascript', 'typescript'],
       \'initial_indent': ['script.javascript', 'script.typescript', 'style'],
