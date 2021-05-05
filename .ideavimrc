@@ -1,9 +1,9 @@
 inoremap jk <ESC>
-set hlsearch
+set ignorecase smartcase hlsearch incsearch
 set scrolloff=3
 set ignorecase smartcase
 set showmode
-set history=1000
+set history=100000
 set surround
 set commentary
 set number
@@ -60,6 +60,9 @@ nnoremap \c :action CheckStyleCurrentFileAction<cr>
 
 " code refactoring
 nnoremap <space>rr :action RenameElement<cr>
+
+nnoremap g; :action JumpToLastChange<Enter>
+nnoremap g, :action JumpToNextChange<Enter>
 
 " unimpaired mappings
 nnoremap [<space> O<esc>j

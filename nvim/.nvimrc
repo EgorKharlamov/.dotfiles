@@ -26,7 +26,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
+
 Plug 'tpope/vim-fugitive'
+Plug 'rhysd/git-messenger.vim'
+
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -40,6 +43,7 @@ Plug 'preservim/nerdtree'  |
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mhinz/vim-startify'
 Plug 'posva/vim-vue'
+Plug 'leafOfTree/vim-vue-plugin'
 Plug 'metakirby5/codi.vim'
 " Plug 'storyn26383/vim-vue'
 

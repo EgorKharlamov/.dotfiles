@@ -83,22 +83,27 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
+"------------------------------------------------------------------------------"
+"                                   Fugitive                                   "
+"------------------------------------------------------------------------------"
+let g:git_messenger_include_diff = "current"
 
 "------------------------------------------------------------------------------"
 "                                      Vue                                     "
 "------------------------------------------------------------------------------"
-
-let g:vim_vue_plugin_config = { 
-      \'syntax': {
-      \   'template': ['html'],
-      \   'script': ['javascript', 'typescript'],
-      \   'style': ['scss', 'css'],
-      \},
-      \'full_syntax': ['scss', 'html', 'javascript', 'typescript'],
-      \'initial_indent': ['script.javascript', 'script.typescript', 'style'],
-      \'attribute': 1,
-      \'keyword': 1,
-      \}
+" let g:vim_vue_plugin_load_full_syntax = 1
+"
+" let g:vim_vue_plugin_config = { 
+"       \'syntax': {
+"       \   'template': ['html'],
+"       \   'script': ['javascript', 'typescript'],
+"       \   'style': ['scss', 'css'],
+"       \},
+"       \'full_syntax': ['scss', 'html', 'javascript', 'typescript'],
+"       \'initial_indent': ['script.javascript', 'script.typescript', 'style'],
+"       \'attribute': 1,
+"       \'keyword': 1,
+"       \}
 
 " let g:vim_vue_plugin_config = { 
 "       \'syntax': {
