@@ -35,6 +35,9 @@ nnoremap <space><cr> :nohlsearch<cr>
 nnoremap cow :action EditorToggleUseSoftWraps<cr>
 nnoremap col :action EditorToggleShowWhitespaces<cr>
 
+nnoremap <space>ss :split<cr>
+nnoremap <space>vs :vsplit<cr>
+
 " actions
 nnoremap <space>q :action CloseContent<cr>
 nnoremap <space>Q :action ReopenClosedTab<cr>
