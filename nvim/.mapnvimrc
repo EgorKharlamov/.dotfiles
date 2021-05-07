@@ -251,17 +251,17 @@ nnoremap <silent> <Leader>f :Rg<CR>
 " }}}
 "
 
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+"
+" autocmd FileType html,css,javascript.jsx,typescript.tsx EmmetInstall
+" let g:user_emmet_settings = {
+"   \ 'typescript' : {
+"   \     'extends' : 'jsx',
+"   \ },
+"   \}
 
-autocmd FileType html,css,javascript.jsx,typescript.tsx EmmetInstall
-let g:user_emmet_settings = {
-  \ 'typescript' : {
-  \     'extends' : 'jsx',
-  \ },
-  \}
-
-let g:vue_pre_processors = 'detect_on_enter'
+" let g:vue_pre_processors = 'detect_on_enter'
 
 "------------------------------------------------------------------------------"
 "                            Splits and Tabbed Files                           "
