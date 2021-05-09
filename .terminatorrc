@@ -1,5 +1,7 @@
 [global_config]
+  borderless = False
   enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  title_font = Fira Code Medium 9
 [keybindings]
 [profiles]
   [[default]]
@@ -8,6 +10,7 @@
     cursor_color = "#aaaaaa"
     font = DejaVu Sans Mono 10
     show_titlebar = False
+    scrollbar_position = hidden
     palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
     use_system_font = False
   [[FirefoxDev]]
@@ -36,9 +39,10 @@
     background_type = transparent
     cursor_color = "#ffcc00"
     cursor_color_fg = False
-    font = DejaVu Sans Mono 10
+    font = Fira Code 11
     foreground_color = "#8f93a2"
     show_titlebar = False
+    scrollbar_position = hidden
     palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
     use_system_font = False
 [layouts]
