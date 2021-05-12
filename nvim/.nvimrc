@@ -26,6 +26,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'caenrique/nvim-maximize-window-toggle'
 
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/git-messenger.vim'

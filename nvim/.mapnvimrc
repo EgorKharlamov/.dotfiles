@@ -307,3 +307,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <Leader>e :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
+
+"------------------------------------------------------------------------------"
+"                                    Neovim                                    "
+"------------------------------------------------------------------------------"
+nnoremap <leader>o :ToggleOnly<Enter>
