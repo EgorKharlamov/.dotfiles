@@ -29,6 +29,13 @@ iso () {
   sudo dd bs=4M if="$1" of=/dev/"$2" status=progress && sync
 }
 
+vpnu () {
+  sudo nmcli connection up "$1"
+}
+vpnd () {
+  sudo nmcli connection down "$1"
+}
+
 alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"
