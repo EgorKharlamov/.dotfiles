@@ -19,7 +19,6 @@ Plug 'digitaltoad/vim-pug'
 Plug 'jparise/vim-graphql'
 
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafOfTree/vim-vue-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
@@ -43,15 +42,15 @@ Plug 'preservim/nerdtree'  |
 " Plug 'govim/govim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mhinz/vim-startify'
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
+" Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'romgrk/nvim-treesitter-context'
 
-Plug 'metakirby5/codi.vim'
+" Plug 'metakirby5/codi.vim'
 " Plug 'storyn26383/vim-vue'
 Plug 'ThePrimeagen/vim-be-good'
 
@@ -99,28 +98,28 @@ require'nvim-treesitter.configs'.setup {
     extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
     max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
   },
-  refactor = {
-    highlight_definitions = { enable = true },
-    highlight_current_scope = { enable = true },
-    smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "grr",
-      },
-    },
-  },
-  context = {
-    enable = true,
-  },
-  navigation = {
-    enable = true,
-    keymaps = {
-      goto_definition = "gnd",
-      list_definitions = "gnD",
-      list_definitions_toc = "gO",
-      goto_next_usage = "<a-*>",
-      goto_previous_usage = "<a-#>",
-    },
-  },
+  -- refactor = {
+  --   highlight_definitions = { enable = true },
+  --   highlight_current_scope = { enable = true },
+  --   smart_rename = {
+  --     enable = true,
+  --     keymaps = {
+  --       smart_rename = "grr",
+  --     },
+  --   },
+  -- },
+  -- context = {
+  --   enable = true,
+  -- },
+  -- navigation = {
+  --   enable = true,
+  --   keymaps = {
+  --     goto_definition = "gnd",
+  --     list_definitions = "gnD",
+  --     list_definitions_toc = "gO",
+  --     goto_next_usage = "<a-*>",
+  --     goto_previous_usage = "<a-#>",
+  --   },
+  -- },
 }
 EOF
