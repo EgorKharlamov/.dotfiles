@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir -p $HOME/.config/nvim
+mkdir -p $HOME/.config/alacritty
 DOTFILES_DIR="$HOME/.dotfiles"
 
 ### links ###
