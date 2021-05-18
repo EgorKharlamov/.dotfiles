@@ -198,7 +198,7 @@ nnoremap <silent> <Leader>f :Rg<CR>
   let $FZF_DEFAULT_OPTS = "--layout=reverse --info=inline"
   let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
-  let g:fzf_layout = { 'down': '40%' }
+  let g:fzf_layout = { 'down': '60%' }
 
   " Customize fzf colors to match your color scheme
   let g:fzf_colors =

@@ -29,7 +29,7 @@ set laststatus=2
 set title
 set ruler
 set cursorline
-syntax enable
+syntax on
 filetype plugin on
 
 "------------------------------------------------------------------------------"
@@ -167,10 +167,17 @@ let g:netrw_banner = 0
 "------------------------------------------------------------------------------"
 "                                   NERDTree                                   "
 "------------------------------------------------------------------------------"
-let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+" let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
 let g:NERDTreeGitStatusShowIgnored = 1
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusConcealBrackets = 0
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$']
+
+if exists("g:loaded_webdevicons")
+	call webdevicons#refresh()
+endif
+
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 " autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |

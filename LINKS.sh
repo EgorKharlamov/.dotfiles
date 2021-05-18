@@ -16,3 +16,4 @@ ln -sf $DOTFILES_DIR/tmux/.tmux.conf ~/.tmux.conf
 ln -sf $DOTFILES_DIR/.terminatorrc ~/.config/terminator/config
 ln -sf $DOTFILES_DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -sf $DOTFILES_DIR/kitty.conf ~/.config/kitty/kitty.conf
+ln -sf $DOTFILES_DIR/alacritty.yml ~/.config/alacritty/alacritty.yml

@@ -1,5 +1,5 @@
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'luochen1990/rainbow' " brackets pair colorizer
+" Plug 'luochen1990/rainbow' " brackets pair colorizer
 
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " color scheme
 Plug 'mhartington/oceanic-next'
