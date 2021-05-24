@@ -1,4 +1,5 @@
 alias la="exa -la"
+
 alias youtube-dl='/home/nightmare/.local/bin/youtube-dl'
 alias speedtest='wget -O - https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3'
 alias ytdlLA='youtube-dl -wcxi --max-filesize 30m --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata -o "%(title)s.%(ext)s"'
