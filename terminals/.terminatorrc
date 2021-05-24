@@ -38,7 +38,7 @@
     background_type = transparent
     cursor_color = "#ffcc00"
     cursor_color_fg = False
-    font = Fira Code 9
+    font = FiraCode Nerd Font 10
     foreground_color = "#8f93a2"
     show_titlebar = False
     scrollbar_position = hidden
