@@ -20,16 +20,16 @@ set tabstop=2
 set shiftwidth=2
 set termguicolors
 set expandtab
-set ignorecase smartcase hlsearch incsearch
+set smartcase hlsearch incsearch
 set showmode
 set numberwidth=1
 set virtualedit=block
-set lazyredraw
+" set lazyredraw
 set laststatus=2
-set title
-set ruler
-set cursorline
-syntax on
+" set title
+" set ruler
+" set cursorline
+syntax enable
 filetype plugin on
 
 "------------------------------------------------------------------------------"
@@ -66,7 +66,7 @@ colorscheme material
 " colorscheme OceanicNext
 
 hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
+" hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 "
