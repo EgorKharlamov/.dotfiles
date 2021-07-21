@@ -6,3 +6,5 @@
 	default = current
 [core]
 	autocrlf = input
+[submodule]
+	recurse = true
