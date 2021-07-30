@@ -1,3 +1,4 @@
+let mapleader = " "
 inoremap jk <ESC>
 set ignorecase smartcase hlsearch incsearch
 set scrolloff=3
@@ -87,3 +88,6 @@ nnoremap g<c-i> <c-i>
 nnoremap / :action Find<cr>
 " but preserve ideavim search
 nnoremap g/ /
+
+nmap <leader>wz :action ToggleDistractionFreeMode<CR>
+vmap <leader>wz :<Backspace><Backspace><Backspace><Backspace><Backspace>action ToggleDistractionFreeMode<CR>
