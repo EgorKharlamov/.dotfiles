@@ -114,4 +114,5 @@ export LC_ALL=ru_RU.UTF-8
 
 # export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export LOCAL=$HOME/.local
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$LOCAL/bin
