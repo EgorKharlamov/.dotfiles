@@ -94,3 +94,4 @@ nmap <leader>R :source ~/.ideavimrc<CR>
 
 nmap <leader>wz :action ToggleDistractionFreeMode<CR><tab>
 " vmap <leader>wz :<Backspace><Backspace><Backspace><Backspace><Backspace>action ToggleDistractionFreeMode<CR>
+nnoremap <leader>mrr      :action RenameElement<CR>
