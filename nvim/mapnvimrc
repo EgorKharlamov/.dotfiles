@@ -2,8 +2,19 @@ inoremap jk <ESC>
 
 let mapleader=" "
 nmap <leader>e :Explore<CR>
-nnoremap <space><cr> :nohlsearch<cr>
+nnoremap <ESC> :nohlsearch<cr>
 nnoremap <leader>w <C-w>
+
+noremap <space>y "+y
+noremap <space>Y "*Y
+noremap <space>p "+p
+noremap <space>P "*P
+
+" easy window navigation
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
 
 "------------------------------------------------------------------------------"
 "                                  easy align                                  "
@@ -312,3 +323,5 @@ nnoremap <Leader>e :NERDTreeToggle<CR>
 "                                    Neovim                                    "
 "------------------------------------------------------------------------------"
 nnoremap <leader>o :ToggleOnly<Enter>
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
