@@ -1,4 +1,5 @@
 alias la="exa -la"
+alias idea="~/idea"
 
 alias speedtest='wget -O - https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3'
 alias ytdlLA='youtube-dl -wcxi --max-filesize 30m --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata -o "%(title)s.%(ext)s"'
@@ -35,6 +36,10 @@ vpnu () {
 }
 vpnd () {
   sudo nmcli connection down "$1"
+}
+
+hg() {
+  history | grep "$1"
 }
 
 alias tm="tmux attach || tmux new -s work"

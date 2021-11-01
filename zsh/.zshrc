@@ -120,3 +120,4 @@ export LOCAL=$HOME/.local
 export CARGOPATH=$HOME/.cargo
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$LOCAL/bin:$CARGOPATH/bin
 . "$HOME/.cargo/env"
+export PATH=/home/nightmare/.meteor:$PATH
