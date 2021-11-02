@@ -42,6 +42,10 @@ hg() {
   history | grep "$1"
 }
 
+apti() {
+  sudo apt-get install "$1" -y
+}
+
 alias tm="tmux attach || tmux new -s work"
 alias tmd="tmux detach"
 alias tmk="tmux kill-server"
