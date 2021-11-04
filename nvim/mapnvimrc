@@ -325,6 +325,6 @@ nnoremap <Leader>e :NERDTreeToggle<CR>
 nnoremap <leader>o :ToggleOnly<Enter>
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
-nnoremap <leader>x :sp term://zsh<CR>
+nnoremap <leader>x :sp term://zsh<CR> :res 15<CR>a
 tnoremap <Esc> <C-\><C-n>
 tnoremap jk <C-\><C-n>
