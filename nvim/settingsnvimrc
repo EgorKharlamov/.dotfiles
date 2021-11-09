@@ -200,3 +200,8 @@ let g:airline#extensions#cursormode#enabled = 1
 
 let g:CtrlSpaceStatuslineFunction =
    \  "airline#extensions#ctrlspace#statusline()"
+
+"------------------------------------------------------------------------------"
+"                                     Rust                                     "
+"------------------------------------------------------------------------------"
+let g:rustfmt_autosave = 1

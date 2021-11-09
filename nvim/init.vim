@@ -7,6 +7,7 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'tpope/vim-surround' " all about surround :)
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " this is for auto complete, prettier and tslinting
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-rls', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-emmet', 'coc-cssmodules', 'coc-vetur', 'coc-go', 'coc-sh', 'coc-snippets', 'coc-tailwindcss']  " list of CoC extensions needed
+Plug 'rust-lang/rust.vim'
 Plug 'jiangmiao/auto-pairs' "this will auto close ( [ {
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
