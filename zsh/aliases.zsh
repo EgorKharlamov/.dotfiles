@@ -43,7 +43,10 @@ hg() {
 }
 
 apti() {
-  sudo apt-get install "$1" -y
+  sudo apt-get update && sudo apt-get install "$1" -Vy
+}
+apdg() {
+  sudo apt update && sudo apt upgrade -yV && sudo apt autoremove
 }
 
 alias tm="tmux attach || tmux new -s work"
