@@ -3,6 +3,7 @@ env:
   WINIT_X11_SCALE_FACTOR: "1"
 
 window:
+  opacity: 0.95
   dimensions:
     columns: 80
     lines: 24
@@ -89,8 +90,6 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: '#ffffff'
-
-background_opacity: 0.95
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
