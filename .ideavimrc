@@ -7,17 +7,20 @@ set showmode
 set history=100000
 set surround
 set commentary
-set NERDTree
 set easymotion
-set exchange
-set textobj-indent
 set highlightedyank
-set number
-set relativenumber
+set NERDTree
+set nu
+set rnu
+" set so=999
+set idearefactormode=keep
+set ideajoin
 
-" nerdtree toggle
-nnoremap <leader>no :NERDTree<cr>
-nnoremap <leader>nc :NERDTreeClose<cr>
+noremap <leader>no :NERDTree<CR>
+noremap <leader>nc :NERDTreeClose<CR>
+noremap <leader>nf :NERDTreeFind<CR>
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
 
 " easy system clipboard copy/paste
 noremap <space>y "*y
@@ -33,8 +36,14 @@ nnoremap <c-k> <c-w>k
 
 nnoremap <a-h> gT
 nnoremap <a-l> gt
-nnoremap <c-s-tab> gT
-nnoremap <c-tab> gt
+nnoremap <S-tab> gT
+nnoremap <tab> gt
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
 
 " clear the search buffer when hitting return
 nnoremap <ESC> :nohlsearch<cr>
@@ -51,7 +60,6 @@ nnoremap <space>q :action CloseContent<cr>
 nnoremap <space>Q :action ReopenClosedTab<cr>
 nnoremap <space>\ :action VimFilePrevious<cr>
 nnoremap <space>e :action SearchEverywhere<cr>
-nnoremap <space>f :action FindInFiles<cr>
 nnoremap <space>E :action Switcher<cr>
 nnoremap <space>t :action FileStructurePopup<cr>
 nnoremap <space>T :action GotoSymbol<cr>
@@ -63,6 +71,7 @@ nnoremap <space>] :action GotoImplementation<cr>
 nnoremap <space>[ :action GotoSuperMethod<cr>
 nnoremap <space>u :action FindUsages<cr>
 nnoremap <space>gt :action GotoTest<cr>
+nnoremap <space>rt :action TestTreePopupMenu<cr>
 nnoremap <space>k :action HighlightUsagesInFile<cr>
 nnoremap \r :action RunClass<cr>
 nnoremap \R :action Run<cr>
@@ -85,8 +94,11 @@ nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
 nnoremap [c :action VcsShowPrevChangeMarker<cr>
 nnoremap ]c :action VcsShowNextChangeMarker<cr>
-nnoremap <leader>gn :action GotoNextError<CR>
-nnoremap <leader>gp :action GotoPreviousError<CR>
+
+" GIT
+nnoremap <space>gm :action Git.Menu<cr>
+nnoremap <space>gb :action Git.Branches<cr>
+
 
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
@@ -103,7 +115,12 @@ nnoremap g/ :action Find<cr>
 " Reload .ideavimrc
 nmap <leader>R :source ~/.ideavimrc<CR>
 
-nmap <leader>wz :action ToggleDistractionFreeMode<CR><tab>
-" vmap <leader>wz :<Backspace><Backspace><Backspace><Backspace><Backspace>action ToggleDistractionFreeMode<CR>r
+nnoremap zC :action CollapseRegionRecursively<CR>
+nnoremap zO :action ExpandRegionRecursively<CR>
 
-let g:highlightedyank_highlight_duration = "-1"
+nmap <leader>wz :action ToggleDistractionFreeMode<CR><tab>
+" vmap <leader>wz :<Backspace><Backspace><Backspace><Backspace><Backspace>action ToggleDistractionFreeMode<CR>
+
+" Increase or decrease font size
+nnoremap <C-=> :action EditorIncreaseFontSize<cr>
+nnoremap <C--> :action EditorDecreaseFontSize<cr>

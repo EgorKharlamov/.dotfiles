@@ -6,7 +6,7 @@ alias ytdlLA='youtube-dl -wcxi --max-filesize 30m --audio-format mp3 --audio-qua
 
 alias instapic="/home/nightmare/.scripts/instagram/pics.sh"
 alias showTempRPi="/home/nightmare/.scripts/RPiScripts/cycle.sh '/home/nightmare/.scripts/RPiScripts/showTempRPi.sh -c'"
-alias rap="/home/nightmare/.scripts/music/streamRap.sh"
+alias rap="/home/nightmare/Dropbox/.scripts/music/streamRap.sh"
 alias showclock="tty-clock -scb"
 alias calendar="calcurse"
 alias updg='sudo apt-get update && sudo apt-get upgrade -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh'
