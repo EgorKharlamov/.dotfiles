@@ -114,10 +114,15 @@ export NVM_DIR="$HOME/.nvm"
 
 export LC_ALL=ru_RU.UTF-8
 
-# export GOROOT=/usr/local/go
+export XDG_CACHE_HOME=$HOME/.cache
 export GOPATH=$HOME/go
 export LOCAL=$HOME/.local
 export CARGOPATH=$HOME/.cargo
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$LOCAL/bin:$CARGOPATH/bin
 . "$HOME/.cargo/env"
 export PATH=/home/nightmare/.meteor:$PATH
+
+# pnpm
+export PNPM_HOME="/home/nightmare/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

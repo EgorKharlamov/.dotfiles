@@ -10,6 +10,7 @@ set commentary
 set easymotion
 set highlightedyank
 set NERDTree
+set exchange
 set nu
 set rnu
 " set so=999
@@ -67,6 +68,8 @@ nnoremap <space>a :action GotoAction<cr>
 nnoremap <space>b :action ToggleLineBreakpoint<cr>
 
 " code navigation
+nnoremap \e :action GotoNextError<CR>
+nnoremap \E :action GotoPreviousError<CR>
 nnoremap <space>] :action GotoImplementation<cr>
 nnoremap <space>[ :action GotoSuperMethod<cr>
 nnoremap <space>u :action FindUsages<cr>
