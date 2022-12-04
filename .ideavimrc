@@ -75,6 +75,7 @@ nnoremap <space>[ :action GotoSuperMethod<cr>
 nnoremap <space>u :action FindUsages<cr>
 nnoremap <space>gt :action GotoTest<cr>
 nnoremap <space>rt :action TestTreePopupMenu<cr>
+nnoremap <space>rf :action RecentFiles<cr>
 nnoremap <space>k :action HighlightUsagesInFile<cr>
 nnoremap \r :action RunClass<cr>
 nnoremap \R :action Run<cr>
@@ -120,6 +121,8 @@ nmap <leader>R :source ~/.ideavimrc<CR>
 
 nnoremap zC :action CollapseRegionRecursively<CR>
 nnoremap zO :action ExpandRegionRecursively<CR>
+
+nmap <leader>x :action ActivateTerminalToolWindow<CR>
 
 nmap <leader>wz :action ToggleDistractionFreeMode<CR><tab>
 " vmap <leader>wz :<Backspace><Backspace><Backspace><Backspace><Backspace>action ToggleDistractionFreeMode<CR>
