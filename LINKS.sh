@@ -16,9 +16,9 @@ ln -sf $DOTFILES_DIR/zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 
 # neovim
 # ln -s $DOTFILES_DIR/nvim ~/.config
-ln -sf $DOTFILES_DIR/nvim/init.vim ~/.config/nvim/init.vim
-ln -sf $DOTFILES_DIR/nvim/mapnvimrc ~/.config/nvim/mapnvimrc
-ln -sf $DOTFILES_DIR/nvim/settingsnvimrc ~/.config/nvim/settingsnvimrc
+# ln -sf $DOTFILES_DIR/nvim/init.vim ~/.config/nvim/init.vim
+# ln -sf $DOTFILES_DIR/nvim/mapnvimrc ~/.config/nvim/mapnvimrc
+# ln -sf $DOTFILES_DIR/nvim/settingsnvimrc ~/.config/nvim/settingsnvimrc
 
 ln -sf $DOTFILES_DIR/git/.gitconfig ~/.gitconfig
 ln -sf $DOTFILES_DIR/tmux/.tmux.conf ~/.tmux.conf
