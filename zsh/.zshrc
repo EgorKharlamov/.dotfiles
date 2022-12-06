@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/nightmare/.oh-my-zsh"
@@ -120,9 +120,9 @@ export LOCAL=$HOME/.local
 export CARGOPATH=$HOME/.cargo
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$LOCAL/bin:$CARGOPATH/bin
 . "$HOME/.cargo/env"
-export PATH=/home/nightmare/.meteor:$PATH
+export PATH="$HOME/.meteor:$PATH"
 
 # pnpm
-export PNPM_HOME="/home/nightmare/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
