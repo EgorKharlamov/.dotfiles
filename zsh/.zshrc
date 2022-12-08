@@ -1,8 +1,9 @@
+export LANG=en_US.utf8
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/nightmare/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -114,15 +115,16 @@ export NVM_DIR="$HOME/.nvm"
 
 export LC_ALL=ru_RU.UTF-8
 
-export XDG_CACHE_HOME=$HOME/.cache
-export GOPATH=$HOME/go
-export LOCAL=$HOME/.local
-export CARGOPATH=$HOME/.cargo
+export XDG_CACHE_HOME="$HOME/.cache"
+export GOPATH="$HOME/go"
+export LOCAL="$HOME/.local"
+export CARGOPATH="$HOME/.cargo"
+export HOMEBREW="/opt/homebrew"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$LOCAL/bin:$CARGOPATH/bin
 . "$HOME/.cargo/env"
-export PATH=/home/nightmare/.meteor:$PATH
+export PATH="$HOME/.meteor:$HOMEBREW/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/home/nightmare/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
