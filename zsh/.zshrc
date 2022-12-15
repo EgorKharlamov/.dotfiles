@@ -118,9 +118,10 @@ export XDG_CACHE_HOME=$HOME/.cache
 export GOPATH=$HOME/go
 export LOCAL=$HOME/.local
 export CARGOPATH=$HOME/.cargo
+export JETBRAINS=$HOME/.local/share/JetBrains/Toolbox/scripts
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$LOCAL/bin:$CARGOPATH/bin
 . "$HOME/.cargo/env"
-export PATH="$HOME/.meteor:$PATH"
+export PATH="$HOME/.meteor:$JETBRAINS/:$PATH"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
