@@ -115,12 +115,17 @@ export NVM_DIR="$HOME/.nvm"
 
 export LC_ALL=ru_RU.UTF-8
 
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/25.0.8775105"
+
 export XDG_CACHE_HOME="$HOME/.cache"
 export GOPATH="$HOME/go"
 export LOCAL="$HOME/.local"
 export CARGOPATH="$HOME/.cargo"
 export HOMEBREW="/opt/homebrew"
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$LOCAL/bin:$CARGOPATH/bin
+export JETBRAINS="/Users/nightmare/Applications/JetBrains Toolbox"
+export PATH=$PATH:$GOROOT/bin:$JETBRAINS:$GOPATH/bin:$LOCAL/bin:$CARGOPATH/bin
 . "$HOME/.cargo/env"
 export PATH="$HOME/.meteor:$HOMEBREW/bin:$PATH"
 
@@ -128,3 +133,7 @@ export PATH="$HOME/.meteor:$HOMEBREW/bin:$PATH"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export LC_ALL="en_US.UTF-8"

@@ -82,30 +82,6 @@ typescript.setup({
 	},
 })
 
--- configure rust server with plugin
--- lspconfig["rust-analyzer"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	settings = {
--- 		["rust-analyzer"] = {
--- 			imports = {
--- 				granularity = {
--- 					group = "module",
--- 				},
--- 				prefix = "self",
--- 			},
--- 			cargo = {
--- 				buildScripts = {
--- 					enable = true,
--- 				},
--- 			},
--- 			procMacro = {
--- 				enable = true,
--- 			},
--- 		},
--- 	},
--- })
-
 -- configure rust-tools server with plugin
 rt.setup({
 	tools = {
@@ -155,7 +131,7 @@ lspconfig["tailwindcss"].setup({
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 -- configure lua server (with special settings)
