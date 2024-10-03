@@ -115,7 +115,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export LC_ALL=ru_RU.UTF-8
 
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export JAVA_HOME=$HOME/Applications/Android\ Studio.app/Contents/jbr/Contents/Home/
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export NDK_HOME="$ANDROID_HOME/ndk/25.0.8775105"
 
@@ -137,3 +137,13 @@ export PATH="$PNPM_HOME:$PATH"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export LC_ALL="en_US.UTF-8"
+
+eval "$(zoxide init zsh)"
+
+# fnm
+FNM_PATH="/Users/nightmare/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/nightmare/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
+eval "$(fnm env --use-on-cd)"
