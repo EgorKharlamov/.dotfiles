@@ -36,6 +36,11 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string u
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
+-- bufferline
+keymap.set("n", "<A-h>", ":bprev<cr>")
+keymap.set("n", "<A-l>", ":bnext<cr>")
+keymap.set("n", "<leader>q", ":bdelete<cr>")
+
 -- fugitive
 keymap.set("n", "<leader>gs", ":G<CR>") -- fugitive
 keymap.set("n", "<leader>gh", ":diffget //3<CR>") -- fugitive
