@@ -1,10 +1,19 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
-    dependencies = { 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim' },
+    dependencies = { 
+      'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
+      "TheGLander/indent-rainbowline.nvim",
+    },
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config
-    opts = {},
+    opts = function(_, opts)
+      -- Other blankline configuration here
+      return require("indent-rainbowline").make_opts(opts, {
+        color_transparency = 0.15
+      })
+    end,
+  -- comment whole function if you wanna rainbow indent
     config = function()
       local configs = require('ibl')
       local highlight = {
