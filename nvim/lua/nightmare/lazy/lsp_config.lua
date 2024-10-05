@@ -86,6 +86,7 @@ return {
 
         local keymap = vim.keymap
         keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>") -- list available help tags
+        keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
     end
   },
