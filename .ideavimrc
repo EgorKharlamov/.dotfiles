@@ -2,7 +2,6 @@ let mapleader = " "
 inoremap jk <ESC>
 set ignorecase smartcase hlsearch incsearch
 set scrolloff=3
-set ignorecase smartcase
 set showmode
 set history=100000
 set surround
@@ -18,7 +17,7 @@ set idearefactormode=keep
 set ideajoin
 
 noremap <leader>no :NERDTree<CR>
-noremap <leader>nc :NERDTreeClose<CR>
+noremap <leader>nc :NERDTree<CR> <esc> :NERDTreeClose<CR>
 noremap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
@@ -52,6 +51,7 @@ nnoremap <ESC> :nohlsearch<cr>
 " options
 nnoremap cow :action EditorToggleUseSoftWraps<cr>
 nnoremap col :action EditorToggleShowWhitespaces<cr>
+
 
 nnoremap <space>ss :split<cr>
 nnoremap <space>vs :vsplit<cr>

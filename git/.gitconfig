@@ -10,3 +10,5 @@
 	recurse = true
 [credential]
 	helper = store
+[http]
+	version = HTTP/2

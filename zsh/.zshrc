@@ -114,7 +114,12 @@ export NVM_DIR="$HOME/.nvm"
 
 export LC_ALL=ru_RU.UTF-8
 
+export JAVA_HOME=$HOME/.local/share/JetBrains/Toolbox/apps/android-studio/jbr
+export ANDROID_HOME="$HOME/Android/Sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/25.0.8775105"
+
 export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CURRENT_DESKTOP="X-Generic xdg-open"
 export GOPATH=$HOME/go
 export LOCAL=$HOME/.local
 export CARGOPATH=$HOME/.cargo
