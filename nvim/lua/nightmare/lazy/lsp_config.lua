@@ -27,7 +27,7 @@ return {
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup({
-        ensure_installed = {"lua_ls", "ts_ls", "volar", "emmet_ls", "eslint"}
+        ensure_installed = {"lua_ls", "ts_ls", "volar", "emmet_ls", "eslint", "dockerls", "docker_compose_language_service", "jsonls"}
       })
     end
   },
@@ -67,12 +67,12 @@ return {
       lspconfig.lua_ls.setup({})
       lspconfig.ts_ls.setup({})
       lspconfig.eslint.setup({
-      on_attach = function(client, bufnr)
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-          })
-        end,
+        on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              command = "EslintFixAll",
+            })
+          end,
 
         root_dir = function(fname)
           local root_file = util.insert_package_json(root_file, 'eslintConfig', fname)
@@ -136,6 +136,23 @@ return {
               },
             },
           }      
+      })
+
+      lspconfig.jsonls.setup({
+        capabilities = capabilities
+      })
+
+      lspconfig.dockerls.setup({})
+      lspconfig.docker_compose_language_service.setup({
+        capabilities = capabilities
+      })
+      vim.filetype.add({
+        filename = {
+          ["docker-compose.yml"] = "yaml.docker-compose",
+          ["docker-compose.yaml"] = "yaml.docker-compose",
+          ["compose.yml"] = "yaml.docker-compose",
+          ["compose.yaml"] = "yaml.docker-compose",
+        },
       })
     end
   },
