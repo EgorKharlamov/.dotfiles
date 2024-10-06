@@ -6,7 +6,20 @@ return {
  
     configs.setup({
       ensure_installed = {
-        "rust", "lua", "vim", "vimdoc", "javascript","typescript", "vue", "html","css"
+        "rust", 
+        "lua", 
+        "vim", 
+        "vimdoc", 
+        "javascript",
+        "typescript", 
+        "vue", 
+        "html",
+        "css",
+        "yaml", 
+        "make", 
+        "just", 
+        "dockerfile",
+        "json"
       },
       sync_install = false,
       highlight = { enable = true },
