@@ -20,6 +20,10 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+keymap.set("n", "=", '<cmd>vertical resize +5<cr>') -- make the window biger vertically
+keymap.set("n", "-", '<cmd>vertical resize -5<cr>') -- make the window smaller vertically
+keymap.set("n", "+", '<cmd>horizontal resize +2<cr>') -- make the window bigger horizontally by pressing shift and =
+keymap.set("n", "_", '<cmd>horizontal resize -2<cr>')
 
 ----------------------
 -- Plugin Keybinds
@@ -40,6 +44,7 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string u
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>")
+keymap.set("n", "<leader>th", "<cmd>Telescope themes<cr>")
 
 -- bufferline
 keymap.set("n", "<A-h>", ":bprev<cr>")

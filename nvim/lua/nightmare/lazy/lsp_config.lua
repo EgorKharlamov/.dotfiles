@@ -27,7 +27,7 @@ return {
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup({
-        ensure_installed = {"lua_ls", "ts_ls", "volar", "emmet_ls", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls"}
+        ensure_installed = {"lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls"}
       })
     end
   },
@@ -115,6 +115,7 @@ return {
         },
       })
       lspconfig.volar.setup({
+        capabilities = capabilities,
         filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
         init_options = {
           vue = {
@@ -125,18 +126,6 @@ return {
           },
         },
       })
-      lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
-        init_options = {
-          html = {
-            options = {
-              -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-              ["bem.enabled"] = true,
-            },
-          },
-        }      
-      })
 
       lspconfig.jsonls.setup({
         capabilities = capabilities
@@ -146,6 +135,19 @@ return {
       })
       lspconfig.cssls.setup({
         filetypes = { "css", "less", "sass", "scss", "vue" },
+      })
+
+      lspconfig.emmet_ls.setup({
+        capabilities = capabilities,
+        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact" },
+        init_options = {
+          html = {
+            options = {
+              -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+              ["bem.enabled"] = true,
+            },
+          },
+        }      
       })
 
       lspconfig.dockerls.setup({})

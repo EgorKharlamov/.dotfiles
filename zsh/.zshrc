@@ -132,3 +132,10 @@ export PATH="$HOME/.meteor:$JETBRAINS/:$PATH"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# fnm
+FNM_PATH="/home/nightmare/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/nightmare/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
