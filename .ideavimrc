@@ -53,8 +53,12 @@ nnoremap cow :action EditorToggleUseSoftWraps<cr>
 nnoremap col :action EditorToggleShowWhitespaces<cr>
 
 
-nnoremap <space>ss :split<cr>
-nnoremap <space>vs :vsplit<cr>
+nnoremap <space>sh :split<cr>
+nnoremap <space>sv :vsplit<cr>
+nnoremap <space>sd :action MoveTabDown<cr>
+nnoremap <space>sr :action MoveTabRight<cr>
+nnoremap <space>ss :action MoveEditorToOppositeTabGroup<cr>
+nnoremap <space>stm :action MaximizeEditorInSplit<cr>
 
 " actions
 nnoremap <space>q :action CloseContent<cr>
@@ -66,6 +70,7 @@ nnoremap <space>t :action FileStructurePopup<cr>
 nnoremap <space>T :action GotoSymbol<cr>
 nnoremap <space>a :action GotoAction<cr>
 nnoremap <space>b :action ToggleLineBreakpoint<cr>
+nnoremap <leader>rrf :action RenameFile<cr>
 
 " code navigation
 nnoremap \e :action GotoNextError<CR>
@@ -82,6 +87,11 @@ nnoremap \R :action Run<cr>
 nnoremap \d :action DebugClass<cr>
 nnoremap \D :action Debug<cr>
 nnoremap \c :action CheckStyleCurrentFileAction<cr>
+
+" bookmark
+nnoremap <leader>bt :action ToggleBookmark<cr>
+nnoremap ]b :action GotoNextBookmark<cr>
+nnoremap [b :action GotoPreviousBookmark<cr>
 
 " code refactoring
 nnoremap <space>rr :action RenameElement<cr>
