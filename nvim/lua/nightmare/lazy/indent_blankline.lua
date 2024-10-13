@@ -1,6 +1,8 @@
 return {
+  {
     "lukas-reineke/indent-blankline.nvim",
-    dependencies = { 
+    enabled = true,
+    dependencies = {
       'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
       "TheGLander/indent-rainbowline.nvim",
     },
@@ -10,7 +12,7 @@ return {
     opts = function(_, opts)
       -- Other blankline configuration here
       return require("indent-rainbowline").make_opts(opts, {
-        color_transparency = 0.15
+        color_transparency = 0.15,
       })
     end,
   -- comment whole function if you wanna rainbow indent
@@ -40,8 +42,27 @@ return {
       end)
 
       vim.g.rainbow_delimiters = { highlight = highlight }
-      configs.setup { indent = { highlight = highlight } }
+      configs.setup {
+        indent = {
+          highlight = highlight
+        },
+      }
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
     end
+  },
+  {
+    'echasnovski/mini.indentscope',
+    version = '*',
+    enabled = false,
+    config = function()
+      local config = require('mini.indentscope')
+      config.setup({
+        symbol = "╎",
+        options = {
+          try_as_border = true
+        },
+      })
+    end
 
+  },
 }

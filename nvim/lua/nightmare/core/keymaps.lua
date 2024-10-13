@@ -34,6 +34,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 
 -- nvim-tree
 keymap.set("n", "<leader>no", ":NvimTreeOpen<CR>")
+keymap.set("n", "<leader>nf", ":NvimTreeFocus<CR>")
 keymap.set("n", "<leader>nc", ":NvimTreeClose<CR>")
 keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>")
 

@@ -65,7 +65,21 @@ return {
       })
 
       lspconfig.lua_ls.setup({})
-      lspconfig.ts_ls.setup({})
+
+      local mason_registry = require('mason-registry')
+      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+      lspconfig.ts_ls.setup({
+        init_options = {
+          plugins = {
+            {
+              name = '@vue/typescript-plugin',
+              location = vue_language_server_path,
+              languages = { 'vue' },
+            },
+          },
+        },
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      })
       lspconfig.eslint.setup({
         on_attach = function(client, bufnr)
             vim.api.nvim_create_autocmd("BufWritePre", {
@@ -120,9 +134,6 @@ return {
         init_options = {
           vue = {
             hybridMode = false,
-          },
-          typescript = {
-            tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
           },
         },
       })
