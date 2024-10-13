@@ -16,127 +16,127 @@ set rnu
 set idearefactormode=keep
 set ideajoin
 
-noremap <leader>no :NERDTree<CR>
-noremap <leader>nc :NERDTree<CR> <esc> :NERDTreeClose<CR>
-noremap <leader>nf :NERDTreeFind<CR>
+nmap <leader>no :NERDTree<CR>
+nmap <leader>nc :NERDTree<CR> <esc> :NERDTreeClose<CR>
+nmap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
 
 " easy system clipboard copy/paste
-noremap <space>y "*y
-noremap <space>Y "*Y
-noremap <space>p "*p
-noremap <space>P "*P
+nmap <leader>y "*y
+nmap <leader>Y "*Y
+nmap <leader>p "*p
+nmap <leader>P "*P
 
 " easy window navigation
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-h> <c-w>h
-nnoremap <c-k> <c-w>k
+nmap <c-l> <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-h> <c-w>h
+nmap <c-k> <c-w>k
 
-nnoremap <a-h> gT
-nnoremap <a-l> gt
-nnoremap <S-tab> gT
-nnoremap <tab> gt
+nmap <a-h> gT
+nmap <a-l> gt
+nmap <S-tab> gT
+nmap <tab> gt
 
-vnoremap < <gv
-vnoremap > >gv
+vmap < <gv
+vmap > >gv
 
-nnoremap zc :action CollapseRegion<CR>
-nnoremap zo :action ExpandRegion<CR>
+nmap zc <Action>(CollapseRegion)
+nmap zo <Action>(ExpandRegion)
 
 " clear the search buffer when hitting return
-nnoremap <ESC> :nohlsearch<cr>
+nmap <ESC> :nohlsearch<cr>
 
 " options
-nnoremap cow :action EditorToggleUseSoftWraps<cr>
-nnoremap col :action EditorToggleShowWhitespaces<cr>
+nmap cow <Action>(EditorToggleUseSoftWraps)
+nmap col <Action>(EditorToggleShowWhitespaces)
 
 
-nnoremap <space>sh :split<cr>
-nnoremap <space>sv :vsplit<cr>
-nnoremap <space>sd :action MoveTabDown<cr>
-nnoremap <space>sr :action MoveTabRight<cr>
-nnoremap <space>ss :action MoveEditorToOppositeTabGroup<cr>
-nnoremap <space>stm :action MaximizeEditorInSplit<cr>
+nmap <leader>sh :split<cr>
+nmap <leader>sv :vsplit<cr>
+nmap <leader>sd <Action>(MoveTabDown)
+nmap <leader>sr <Action>(MoveTabRight)
+nmap <leader>ss <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>stm <Action>(MaximizeEditorInSplit)
 
 " actions
-nnoremap <space>q :action CloseContent<cr>
-nnoremap <space>Q :action ReopenClosedTab<cr>
-nnoremap <space>\ :action VimFilePrevious<cr>
-nnoremap <space>e :action SearchEverywhere<cr>
-nnoremap <space>E :action Switcher<cr>
-nnoremap <space>t :action FileStructurePopup<cr>
-nnoremap <space>T :action GotoSymbol<cr>
-nnoremap <space>a :action GotoAction<cr>
-nnoremap <space>b :action ToggleLineBreakpoint<cr>
-nnoremap <leader>rrf :action RenameFile<cr>
+nmap <leader>q <Action>(CloseContent)
+nmap <leader>Q <Action>(ReopenClosedTab)
+nmap <leader>\ <Action>(VimFilePrevious)
+nmap <leader>e <Action>(SearchEverywhere)
+nmap <leader>E <Action>(Switcher)
+nmap <leader>t <Action>(FileStructurePopup)
+nmap <leader>T <Action>(GotoSymbol)
+nmap <leader>a <Action>(GotoAction)
+nmap <leader>b <Action>(ToggleLineBreakpoint)
+nmap <leader>rrf <Action>(RenameFile)
 
 " code navigation
-nnoremap \e :action GotoNextError<CR>
-nnoremap \E :action GotoPreviousError<CR>
-nnoremap <space>] :action GotoImplementation<cr>
-nnoremap <space>[ :action GotoSuperMethod<cr>
-nnoremap <space>u :action FindUsages<cr>
-nnoremap <space>gt :action GotoTest<cr>
-nnoremap <space>rt :action TestTreePopupMenu<cr>
-nnoremap <space>rf :action RecentFiles<cr>
-nnoremap <space>k :action HighlightUsagesInFile<cr>
-nnoremap \r :action RunClass<cr>
-nnoremap \R :action Run<cr>
-nnoremap \d :action DebugClass<cr>
-nnoremap \D :action Debug<cr>
-nnoremap \c :action CheckStyleCurrentFileAction<cr>
+nmap \e <Action>(GotoNextError)
+nmap \E <Action>(GotoPreviousError)
+nmap <leader>] <Action>(GotoImplementation)
+nmap <leader>[ <Action>(GotoSuperMethod)
+nmap <leader>u <Action>(FindUsages)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>rt <Action>(TestTreePopupMenu)
+nmap <leader>rf <Action>(RecentFiles)
+nmap <leader>k <Action>(HighlightUsagesInFile)
+nmap \r <Action>(RunClass)
+nmap \R <Action>(Run)
+nmap \d <Action>(DebugClass)
+nmap \D <Action>(Debug)
+nmap \c <Action>(CheckStyleCurrentFileAction)
 
 " bookmark
-nnoremap <leader>bt :action ToggleBookmark<cr>
-nnoremap ]b :action GotoNextBookmark<cr>
-nnoremap [b :action GotoPreviousBookmark<cr>
+nmap <leader>bt <Action>(ToggleBookmark)
+nmap ]b <Action>(GotoNextBookmark)
+nmap [b <Action>(GotoPreviousBookmark)
 
 " code refactoring
-nnoremap <space>rr :action RenameElement<cr>
+nmap <leader>rr <Action>(RenameElement)
 
-nnoremap g; :action JumpToLastChange<Enter>
-nnoremap g, :action JumpToNextChange<Enter>
+nmap g; <Action>(JumpToLastChange)
+nmap g, <Action>(JumpToNextChange)
 
 " unimpaired mappings
-nnoremap [<space> O<esc>j
-nnoremap ]<space> o<esc>k
-nnoremap [q :action PreviousOccurence<cr>
-nnoremap ]q :action NextOccurence<cr>
-nnoremap [m :action MethodUp<cr>
-nnoremap ]m :action MethodDown<cr>
-nnoremap [c :action VcsShowPrevChangeMarker<cr>
-nnoremap ]c :action VcsShowNextChangeMarker<cr>
+nmap [<leader> O<esc>j
+nmap ]<leader> o<esc>k
+nmap [q <Action>(PreviousOccurence)
+nmap ]q <Action>(NextOccurence)
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap ]c <Action>(VcsShowNextChangeMarker)
 
 " GIT
-nnoremap <space>gm :action Git.Menu<cr>
-nnoremap <space>gb :action Git.Branches<cr>
+nmap <leader>gm <Action>(Git.Menu)
+nmap <leader>gb <Action>(Git.Branches)
 
 
 " built-in navigation to navigated items works better
-nnoremap <c-o> :action Back<cr>
-nnoremap <c-i> :action Forward<cr>
+nmap <c-o> <Action>(Back)
+nmap <c-i> <Action>(Forward)
 " but preserve ideavim defaults
-nnoremap g<c-o> <c-o>
-nnoremap g<c-i> <c-i>
+nmap g<c-o> <c-o>
+nmap g<c-i> <c-i>
 
 " built in search looks better
-nnoremap g/ :action Find<cr>
+nmap g/ <Action>(Find)
 " " but preserve ideavim search
 " nnoremap / /
 
 " Reload .ideavimrc
 nmap <leader>R :source ~/.ideavimrc<CR>
 
-nnoremap zC :action CollapseRegionRecursively<CR>
-nnoremap zO :action ExpandRegionRecursively<CR>
+nmap zC <Action>(CollapseRegionRecursively)
+nmap zO <Action>(ExpandRegionRecursively)
 
-nmap <leader>x :action ActivateTerminalToolWindow<CR>
+nmap <leader>x <Action>(ActivateTerminalToolWindow)
 
-nmap <leader>wz :action ToggleDistractionFreeMode<CR><tab>
+nmap <leader>wz <Action>(ToggleDistractionFreeMode)
 " vmap <leader>wz :<Backspace><Backspace><Backspace><Backspace><Backspace>action ToggleDistractionFreeMode<CR>
 
 " Increase or decrease font size
-nnoremap <C-=> :action EditorIncreaseFontSize<cr>
-nnoremap <C--> :action EditorDecreaseFontSize<cr>
+nmap <C-=> <Action>(EditorIncreaseFontSize)
+nmap <C--> <Action>(EditorDecreaseFontSize)
