@@ -27,7 +27,7 @@ return {
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup({
-        ensure_installed = {"lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls"}
+        ensure_installed = {"lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman"}
       })
     end
   },
@@ -172,6 +172,10 @@ return {
           ["compose.yml"] = "yaml.docker-compose",
           ["compose.yaml"] = "yaml.docker-compose",
         },
+      })
+
+      lspconfig.marksman.setup({
+        capabilities = capabilities,
       })
     end
   },

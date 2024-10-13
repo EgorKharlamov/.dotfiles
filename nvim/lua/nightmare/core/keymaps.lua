@@ -59,6 +59,7 @@ keymap.set("n", "<leader>gf", ":diffget //2<CR>") -- fugitive
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+keymap.set("n", "<leader>rr", "<cmd>lua vim.lsp.buf.rename()<cr>") -- mapping to restart lsp if necessary
 
 -- lazygit
 keymap.set("n", "<leader>gg", "<cmd>LazyGit <cr>")
