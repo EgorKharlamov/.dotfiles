@@ -69,9 +69,9 @@ keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>") -- list available he
 keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
 -- outline
-vim.keymap.set("n", "<leader>to", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+keymap.set("n", "<leader>to", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
 -- snippets
 local luasnip = require('luasnip')
-vim.keymap.set({"n"}, "<leader>sn", function() luasnip.jump( 1) end, {silent = true})
-vim.keymap.set({"n"}, "<leader>sp", function() luasnip.jump(-1) end, {silent = true})
+keymap.set({"n"}, "<leader>sn", function() luasnip.jump( 1) end, {silent = true})
+keymap.set({"n"}, "<leader>sp", function() luasnip.jump(-1) end, {silent = true})

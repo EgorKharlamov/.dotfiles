@@ -14,7 +14,7 @@ alias updg='sudo apt-get update && sudo apt-get upgrade -y && sudo apt upgrade -
 alias pacyun="sudo pacman -Syyu --noconfirm && yun"
 alias speedUp='xset r rate 250 50'
 alias chromedev="google-chrome --disable-web-security --user-data-dir=$HOME/chrome"
-alias r="ranger"
+alias r="yazi"
 
 alias vueDev="echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
 alias myip="echo 94.73.247.54"
