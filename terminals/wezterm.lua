@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 config.font = wezterm.font 'FiraCode Nerd Font'
 config.font_size = 10.0
 config.line_height = 0.8
-config.color_scheme = 'OneDark'
+config.color_scheme = 'OneDark (base16)'
 
 config.enable_tab_bar = false
 
