@@ -20,10 +20,10 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
-keymap.set("n", "=", '<cmd>vertical resize +5<cr>') -- make the window biger vertically
-keymap.set("n", "-", '<cmd>vertical resize -5<cr>') -- make the window smaller vertically
-keymap.set("n", "+", '<cmd>horizontal resize +2<cr>') -- make the window bigger horizontally by pressing shift and =
-keymap.set("n", "_", '<cmd>horizontal resize -2<cr>')
+keymap.set("n", "<S-A-h>", '<cmd>vertical resize +5<cr>') -- make the window biger vertically
+keymap.set("n", "<S-A-l>", '<cmd>vertical resize -5<cr>') -- make the window smaller vertically
+keymap.set("n", "<S-A-k>", '<cmd>horizontal resize +2<cr>') -- make the window bigger horizontally by pressing shift and =
+keymap.set("n", "<S-A-j>", '<cmd>horizontal resize -2<cr>')
 
 ----------------------
 -- Plugin Keybinds
