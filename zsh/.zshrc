@@ -12,7 +12,7 @@ export ZSH="/home/nightmare/.oh-my-zsh"
 if [[ -n $SSH_CONNECTION ]]; then
   ZSH_THEME="pygmalion"
 else
-  ZSH_THEME="fino"
+  ZSH_THEME="dst"
 fi
 
 clear && pfetch
