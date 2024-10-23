@@ -1,4 +1,4 @@
-alias la="exa -la --icons"
+alias la="eza -la --icons"
 alias workstart="$HOME/Dropbox/.scripts/workcron/workstart.sh"
 alias workend="$HOME/Dropbox/.scripts/workcron/workend.sh"
 alias btrestart="$HOME/Dropbox/.scripts/bluetooth/btrestart"

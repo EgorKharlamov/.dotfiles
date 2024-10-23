@@ -75,7 +75,7 @@ clear && pfetch
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git extract colored-man-pages zsh-autosuggestions zsh-syntax-highlighting fnm docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -141,3 +141,5 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/nightmare/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+eval "$(zoxide init zsh)"

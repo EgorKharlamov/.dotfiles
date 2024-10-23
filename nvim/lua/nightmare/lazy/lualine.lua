@@ -6,6 +6,9 @@ return {
     configs.setup({
       options = {
         theme = 'onedark'
+      },
+      sections = {
+        lualine_x = {'fileformat', 'filetype'},
       }
     })
   end
