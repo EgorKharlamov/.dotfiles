@@ -89,8 +89,7 @@ return {
           end,
 
         root_dir = function(fname)
-          local root_file = util.insert_package_json(root_file, 'eslintConfig', fname)
-          return util.root_pattern(unpack(root_file))(fname)
+          return util.root_pattern('package.json', 'tsconfig.json', 'vite.config.ts')(fname)
         end,
 
         settings = {

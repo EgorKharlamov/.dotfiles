@@ -27,5 +27,5 @@ ln -sf $DOTFILES_DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 # terminals
 # ln -sf $DOTFILES_DIR/terminals/.terminatorrc ~/.config/terminator/config
 ln -sf $DOTFILES_DIR/terminals/kitty.conf ~/.config/kitty/kitty.conf
-ln -sf $DOTFILES_DIR/terminals/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -sf $DOTFILES_DIR/terminals/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -sf $DOTFILES_DIR/terminals/wezterm.lua ~/.wezterm.lua
