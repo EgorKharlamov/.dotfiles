@@ -1,4 +1,4 @@
-local root_file = {
+local root_file_const = {
   '.eslintrc',
   '.eslintrc.js',
   '.eslintrc.cjs',
@@ -11,6 +11,10 @@ local root_file = {
   'eslint.config.ts',
   'eslint.config.mts',
   'eslint.config.cts',
+  'package.json',
+  'tsconfig.json',
+  'vite.config.ts',
+  '.git'
 }
 
 return {
@@ -81,6 +85,7 @@ return {
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
       })
       lspconfig.eslint.setup({
+        capabilities = capabilities,
         on_attach = function(client, bufnr)
             vim.api.nvim_create_autocmd("BufWritePre", {
               buffer = bufnr,
@@ -89,7 +94,8 @@ return {
           end,
 
         root_dir = function(fname)
-          return util.root_pattern('package.json', 'tsconfig.json', 'vite.config.ts')(fname)
+          local root_file = util.insert_package_json(root_file_const, 'eslintConfig', fname)
+          return util.root_pattern(unpack(root_file))(fname)
         end,
 
         settings = {
@@ -135,15 +141,26 @@ return {
             hybridMode = false,
           },
         },
+        settings = {
+          typescript = {
+            preferences = {
+              includeCompletionsForModuleExports = true,
+              includeCompletionsForImportStatements = true,
+              importModuleSpecifier = "non-relative",
+            },
+          },
+        }
       })
 
       lspconfig.jsonls.setup({
         capabilities = capabilities
       })
       lspconfig.css_variables.setup({
+        capabilities = capabilities,
         filetypes = { "css", "less", "sass", "scss", "vue" },
       })
       lspconfig.cssls.setup({
+        capabilities = capabilities,
         filetypes = { "css", "less", "sass", "scss", "vue" },
       })
 
