@@ -31,7 +31,7 @@ return {
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup({
-        ensure_installed = {"lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman"}
+        ensure_installed = {"lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer"}
       })
     end
   },
@@ -188,6 +188,18 @@ return {
           ["compose.yml"] = "yaml.docker-compose",
           ["compose.yaml"] = "yaml.docker-compose",
         },
+      })
+
+      lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              callback = function ()
+                vim.lsp.buf.format {async = false}
+              end
+            })
+          end,
       })
 
       lspconfig.marksman.setup({

@@ -43,13 +43,11 @@ keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+keymap.set("n", "<leader>fht", "<cmd>Telescope help_tags<cr>") -- list available help tags
 keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>")
-keymap.set("n", "<leader>th", "<cmd>Telescope themes<cr>")
+keymap.set("n", "<leader>tt", "<cmd>Telescope themes<cr>")
 
 -- bufferline
-keymap.set("n", "<A-h>", ":bprev<cr>")
-keymap.set("n", "<A-l>", ":bnext<cr>")
 keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<cr>")
 
 -- fugitive
