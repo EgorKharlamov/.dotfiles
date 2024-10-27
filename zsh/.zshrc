@@ -16,12 +16,10 @@ else
 fi
 
 function my_fetch {
-  number=$((1 + $RANDOM % 2))
-  command=pfetch
-  if [[ number -eq 2 ]]; then
-    command=nitch
-  fi
-  clear && $command
+  available_commands=( "pfetch" "nitch" "treefetch"  "treefetch -b" "treefetch -x" "rxfetch" "nerdfetch" "nerdfetch -c" "nerdfetch -p" "nerdfetch -e" "macchina -o distribution -o resolution -o uptime -o processor-load -o memory -o disk-space -t Helium" )
+  number=$((1 + $RANDOM % ${#available_commands[@]}))
+  command="${available_commands[$number]}"
+  clear && eval "$command"
 }
 my_fetch
 

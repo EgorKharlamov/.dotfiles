@@ -215,6 +215,7 @@ return {
 
       lspconfig.bashls.setup({
         capabilities = capabilities,
+        on_attach = on_attach_default_lsp,
         settings = {
           filetypes = { "sh", "zsh" },
         }
