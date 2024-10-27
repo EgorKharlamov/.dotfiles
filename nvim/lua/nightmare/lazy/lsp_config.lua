@@ -17,6 +17,15 @@ local root_file_const = {
   '.git'
 }
 
+function on_attach_default_lsp(client, bufnr)
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = bufnr,
+    callback = function()
+      vim.lsp.buf.format { async = false }
+    end
+  })
+end
+
 return {
   {
     'williamboman/mason.nvim',
@@ -27,11 +36,11 @@ return {
   },
   {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = {"williamboman/mason.nvim"},
+    dependencies = { "williamboman/mason.nvim" },
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup({
-        ensure_installed = {"lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer"}
+        ensure_installed = { "lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls" }
       })
     end
   },
@@ -62,16 +71,20 @@ return {
             return
           end
           if server_name == "volar" then
-              server_config.filetypes = { 'vue', 'typescript', 'javascript' }
+            server_config.filetypes = { 'vue', 'typescript', 'javascript' }
           end
           lspconfig[server_name].setup(server_config)
         end,
       })
 
-      lspconfig.lua_ls.setup({})
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach_default_lsp,
+      })
 
       local mason_registry = require('mason-registry')
-      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
+          '/node_modules/@vue/language-server'
       lspconfig.ts_ls.setup({
         init_options = {
           plugins = {
@@ -87,11 +100,11 @@ return {
       lspconfig.eslint.setup({
         capabilities = capabilities,
         on_attach = function(client, bufnr)
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = bufnr,
-              command = "EslintFixAll",
-            })
-          end,
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
 
         root_dir = function(fname)
           local root_file = util.insert_package_json(root_file_const, 'eslintConfig', fname)
@@ -174,7 +187,7 @@ return {
               ["bem.enabled"] = true,
             },
           },
-        }      
+        }
       })
 
       lspconfig.dockerls.setup({})
@@ -192,14 +205,19 @@ return {
 
       lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
-        on_attach = function(client, bufnr)
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = bufnr,
-              callback = function ()
-                vim.lsp.buf.format {async = false}
-              end
-            })
-          end,
+
+        diagnostics = {
+          enable = false,
+        },
+
+        on_attach = on_attach_default_lsp,
+      })
+
+      lspconfig.bashls.setup({
+        capabilities = capabilities,
+        settings = {
+          filetypes = { "sh", "zsh" },
+        }
       })
 
       lspconfig.marksman.setup({

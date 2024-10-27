@@ -10,10 +10,11 @@ local file_ignore_patterns = {
 
 return {
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons' ,
+      'nvim-tree/nvim-web-devicons',
       'andrew-george/telescope-themes',
     },
     confing = function()
@@ -43,7 +44,7 @@ return {
         pickers = {
           live_grep = {
             additional_args = function(opts)
-              return {"--hidden"}
+              return { "--hidden" }
             end
           },
           find_files = {

@@ -8,9 +8,8 @@ return {
         theme = 'onedark'
       },
       sections = {
-        lualine_x = {'fileformat', 'filetype'},
+        lualine_x = { 'fileformat', 'filetype' },
       }
     })
   end
 }
-

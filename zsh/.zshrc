@@ -15,7 +15,15 @@ else
   ZSH_THEME="dst"
 fi
 
-clear && pfetch
+function my_fetch {
+  number=$((1 + $RANDOM % 2))
+  command=pfetch
+  if [[ number -eq 2 ]]; then
+    command=nitch
+  fi
+  clear && $command
+}
+my_fetch
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

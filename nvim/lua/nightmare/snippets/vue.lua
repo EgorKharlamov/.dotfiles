@@ -5,16 +5,16 @@ local i = luasnip.insert_node
 
 return {
   s('vcc', {
-    t({"<script lang=\"ts\" setup>", ""}),
+    t({ "<script lang=\"ts\" setup>", "" }),
     i(3),
-    t({"\t", "</script>"}),
+    t({ "\t", "</script>" }),
 
-    t({"\t", "\t", "<template>", ""}),
+    t({ "\t", "\t", "<template>", "" }),
     i(1),
-    t({'\t',"</template>"}),
+    t({ '\t', "</template>" }),
 
-    t({"\t", "\t", "<style lang=\"scss\" scoped>", ""}),
+    t({ "\t", "\t", "<style lang=\"scss\" scoped>", "" }),
     i(2),
-    t({"\t", "</style>"}),
+    t({ "\t", "</style>" }),
   })
 }
