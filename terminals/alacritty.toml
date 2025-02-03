@@ -1,5 +1,7 @@
-live_config_reload = false
 working_directory = "None"
+
+[general]
+live_config_reload = true
 
 [bell]
 animation = "EaseOutExpo"
@@ -58,7 +60,7 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 15
+size = 11
 
 [font.bold]
 family = "FiraCode Nerd Font Mono"
@@ -207,7 +209,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 decorations = "full"
 dynamic_padding = false
 dynamic_title = true
-opacity = 0.97
+opacity = 1
 startup_mode = "Windowed"
 
 [window.dimensions]

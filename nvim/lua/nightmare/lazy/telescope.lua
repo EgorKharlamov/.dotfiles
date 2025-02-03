@@ -2,10 +2,12 @@ local file_ignore_patterns = {
   "node_modules",
   ".output",
   "dist",
+  "target",
   ".idea",
   ".vscode",
   ".cache",
   ".nuxt",
+  "git",
 }
 
 return {

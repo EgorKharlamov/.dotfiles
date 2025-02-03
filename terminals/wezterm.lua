@@ -17,4 +17,6 @@ config.window_padding = {
 
 config.window_background_opacity = 0.95
 
+warn_about_missing_glyphs = false
+
 return config

@@ -12,7 +12,7 @@ export ZSH="/home/nightmare/.oh-my-zsh"
 if [[ -n $SSH_CONNECTION ]]; then
   ZSH_THEME="pygmalion"
 else
-  ZSH_THEME="dst"
+  ZSH_THEME="fino"
 fi
 
 function my_fetch {
@@ -20,6 +20,7 @@ function my_fetch {
   number=$((1 + $RANDOM % ${#available_commands[@]}))
   command="${available_commands[$number]}"
   clear && eval "$command"
+  # curl 'https://wttr.in/krasnoyarsk?format=2&lang=ru'
 }
 my_fetch
 
@@ -149,3 +150,8 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 eval "$(zoxide init zsh)"
+
+### python
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

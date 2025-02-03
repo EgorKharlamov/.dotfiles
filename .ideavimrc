@@ -112,6 +112,7 @@ nmap ]c <Action>(VcsShowNextChangeMarker)
 " GIT
 nmap <leader>gm <Action>(Git.Menu)
 nmap <leader>gb <Action>(Git.Branches)
+nmap <leader>grb <Action>(Vcs.RollbackChangedLines)
 
 
 " built-in navigation to navigated items works better

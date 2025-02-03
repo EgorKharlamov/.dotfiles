@@ -1,7 +1,8 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
-local keymap = vim.keymap -- for conciseness
+local keymap = vim.keymap
+local diagnostic = vim.diagnostic
 
 ---------------------
 -- General Keymaps
@@ -24,6 +25,11 @@ keymap.set("n", "<S-A-h>", '<cmd>vertical resize +5<cr>')   -- make the window b
 keymap.set("n", "<S-A-l>", '<cmd>vertical resize -5<cr>')   -- make the window smaller vertically
 keymap.set("n", "<S-A-k>", '<cmd>horizontal resize +2<cr>') -- make the window bigger horizontally by pressing shift and =
 keymap.set("n", "<S-A-j>", '<cmd>horizontal resize -2<cr>')
+
+keymap.set("n", "<leader>cfn", '<cmd>let @+ = expand("%:t")<cr>')
+
+-- update current buffer
+keymap.set('n', "<leader>ub", '<cmd>bufdo e<cr>')
 
 ----------------------
 -- Plugin Keybinds
@@ -65,6 +71,12 @@ keymap.set("n", "<leader>gg", "<cmd>LazyGit <cr>")
 -- LSP
 keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>") -- list available help tags
 keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+
+-- diagnostic
+keymap.set("n", "<leader>E", "<cmd>lua vim.diagnostic.open_float()<cr>")
+keymap.set('n', '<leader>td', function()
+  diagnostic.enable(not diagnostic.is_enabled())
+end, { silent = true, noremap = true })
 
 -- outline
 keymap.set("n", "<leader>to", "<cmd>Outline<CR>", { desc = "Toggle Outline" })

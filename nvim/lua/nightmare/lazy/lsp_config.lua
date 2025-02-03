@@ -44,18 +44,18 @@ return {
       })
     end
   },
-  {
-    'folke/neoconf.nvim'
-  },
+  -- {
+  --   'folke/neoconf.nvim'
+  -- },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
       "williamboman/mason.nvim",
       'williamboman/mason-lspconfig.nvim',
-      'folke/neoconf.nvim'
+      -- 'folke/neoconf.nvim'
     },
     config = function()
-      local neoconf = require('neoconf')
+      -- local neoconf = require('neoconf')
       local lspconfig = require('lspconfig')
       local configs = require('lspconfig/configs')
       local mason_lspconfig = require('mason-lspconfig')
@@ -63,13 +63,13 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      neoconf.setup({})
+      -- neoconf.setup({})
       mason_lspconfig.setup_handlers({
         function(server_name)
           local server_config = {}
-          if neoconf.get(server_name .. ".disable") then
-            return
-          end
+          -- if neoconf.get(server_name .. ".disable") then
+          --   return
+          -- end
           if server_name == "volar" then
             server_config.filetypes = { 'vue', 'typescript', 'javascript' }
           end

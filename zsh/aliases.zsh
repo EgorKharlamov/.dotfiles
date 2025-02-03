@@ -2,6 +2,7 @@ alias la="eza --icons -la"
 alias workstart="$HOME/Dropbox/.scripts/workcron/workstart.sh"
 alias workend="$HOME/Dropbox/.scripts/workcron/workend.sh"
 alias btrestart="$HOME/Dropbox/.scripts/bluetooth/btrestart"
+alias weather="curl 'https://wttr.in/krasnoyarsk?format=2&lang=ru'"
 
 alias ytdlLA='youtube-dl -wcxi --max-filesize 30m --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata -o "%(title)s.%(ext)s"'
 
@@ -12,6 +13,7 @@ alias showclock="tty-clock -scb"
 alias calendar="calcurse"
 alias updg='sudo apt-get update && sudo apt-get upgrade -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh'
 alias pacyun="sudo pacman -Syyu --noconfirm && yun"
+alias clean_cache="rm -rf ~/.cache/* && paccache -r"
 alias speedUp='xset r rate 250 50'
 alias chromedev="google-chrome --disable-web-security --user-data-dir=$HOME/chrome"
 alias r="yazi"

@@ -37,3 +37,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- opt.iskeyword:append("-") -- consider string-string as whole word
 --
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
