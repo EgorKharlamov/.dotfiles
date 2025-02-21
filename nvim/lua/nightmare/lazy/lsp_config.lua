@@ -16,6 +16,16 @@ local root_file_const = {
   'vite.config.ts',
   '.git'
 }
+local border = {
+  { '┌', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '┐', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+  { '┘', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '└', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+}
 
 function on_attach_default_lsp(client, bufnr)
   vim.api.nvim_create_autocmd("BufWritePre", {
@@ -40,7 +50,7 @@ return {
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup({
-        ensure_installed = { "lua_ls", "ts_ls", "volar", "eslint", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls" }
+        ensure_installed = { "lua_ls", "ts_ls", "volar", "eslint", "stylelint_lsp", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls" }
       })
     end
   },
@@ -63,10 +73,18 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+      vim.diagnostic.config({
+        virtual_text = false,
+        float = { border = border }
+      })
+
       -- neoconf.setup({})
       mason_lspconfig.setup_handlers({
         function(server_name)
-          local server_config = {}
+          local server_config = {
+            -- capabilities = capabilities,
+            -- on_attach = on_attach_default_lsp,
+          }
           -- if neoconf.get(server_name .. ".disable") then
           --   return
           -- end
@@ -95,7 +113,13 @@ return {
             },
           },
         },
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+        filetypes = {
+          'typescript',
+          'javascript',
+          'javascriptreact',
+          'typescriptreact',
+          -- 'vue'
+        },
       })
       lspconfig.eslint.setup({
         capabilities = capabilities,
@@ -163,6 +187,21 @@ return {
             },
           },
         }
+      })
+
+      lspconfig.stylelint_lsp.setup({
+        capabilities = capabilities,
+        filetypes = { "css", "scss", "vue" },
+        root_dir = util.root_pattern("package.json", ".git"),
+        settings = {
+          stylelintplus = {
+            autoFixOnSave = true,
+            autoFixOnFormat = true,
+          },
+        },
+        on_attach = function(client)
+          client.server_capabilities.document_formatting = false
+        end,
       })
 
       lspconfig.jsonls.setup({

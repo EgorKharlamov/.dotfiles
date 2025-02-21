@@ -6,7 +6,7 @@ set showmode
 set history=100000
 set surround
 set commentary
-set easymotion
+" set easymotion
 set highlightedyank
 set NERDTree
 set exchange
@@ -87,6 +87,7 @@ nmap \R <Action>(Run)
 nmap \d <Action>(DebugClass)
 nmap \D <Action>(Debug)
 nmap \c <Action>(CheckStyleCurrentFileAction)
+map s <Action>(flash.search)
 
 " bookmark
 nmap <leader>bt <Action>(ToggleBookmark)

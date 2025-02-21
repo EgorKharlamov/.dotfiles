@@ -27,6 +27,7 @@ keymap.set("n", "<S-A-k>", '<cmd>horizontal resize +2<cr>') -- make the window b
 keymap.set("n", "<S-A-j>", '<cmd>horizontal resize -2<cr>')
 
 keymap.set("n", "<leader>cfn", '<cmd>let @+ = expand("%:t")<cr>')
+keymap.set("n", "<leader>rcfn", '<cmd>let @+ = expand("%")<cr>')
 
 -- update current buffer
 keymap.set('n', "<leader>ub", '<cmd>bufdo e<cr>')
@@ -46,6 +47,7 @@ keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>")
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+keymap.set("n", "<leader>ft", "<cmd>Telescope frecency workspace=CWD<cr>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")     -- list open buffers in current neovim instance
@@ -73,13 +75,17 @@ keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>") -- list available he
 keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
 -- diagnostic
-keymap.set("n", "<leader>E", "<cmd>lua vim.diagnostic.open_float()<cr>")
+keymap.set("n", "<leader>te", "<cmd>lua vim.diagnostic.open_float()<cr>")
 keymap.set('n', '<leader>td', function()
   diagnostic.enable(not diagnostic.is_enabled())
 end, { silent = true, noremap = true })
 
 -- outline
-keymap.set("n", "<leader>to", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+keymap.set("n", "<leader>tou", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+-- overseer
+keymap.set("n", "<leader>ra", "<cmd>OverseerRun<CR>")
+keymap.set("n", "<leader>tov", "<cmd>OverseerToggle<CR>")
 
 -- snippets
 local luasnip = require('luasnip')
