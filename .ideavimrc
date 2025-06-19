@@ -64,7 +64,8 @@ nmap <leader>stm <Action>(MaximizeEditorInSplit)
 nmap <leader>q <Action>(CloseContent)
 nmap <leader>Q <Action>(ReopenClosedTab)
 nmap <leader>\ <Action>(VimFilePrevious)
-nmap <leader>e <Action>(SearchEverywhere)
+nmap <leader>ff <Action>(SearchEverywhere)
+nmap <leader>fs <Action>(FindInPath)
 nmap <leader>E <Action>(Switcher)
 nmap <leader>t <Action>(FileStructurePopup)
 nmap <leader>T <Action>(GotoSymbol)
@@ -113,7 +114,7 @@ nmap ]c <Action>(VcsShowNextChangeMarker)
 " GIT
 nmap <leader>gm <Action>(Git.Menu)
 nmap <leader>gb <Action>(Git.Branches)
-nmap <leader>grb <Action>(Vcs.RollbackChangedLines)
+nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
 
 
 " built-in navigation to navigated items works better
@@ -136,7 +137,7 @@ nmap zO <Action>(ExpandRegionRecursively)
 
 nmap <leader>x <Action>(ActivateTerminalToolWindow)
 
-nmap <leader>wz <Action>(ToggleDistractionFreeMode)
+nmap <leader>zz <Action>(ToggleDistractionFreeMode)
 " vmap <leader>wz :<Backspace><Backspace><Backspace><Backspace><Backspace>action ToggleDistractionFreeMode<CR>
 
 " Increase or decrease font size

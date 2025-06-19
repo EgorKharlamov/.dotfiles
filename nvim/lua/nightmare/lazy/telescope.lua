@@ -8,6 +8,8 @@ local file_ignore_patterns = {
   ".cache",
   ".nuxt",
   "git",
+  ".obsidian",
+  ".trash",
 }
 
 return {
@@ -34,7 +36,15 @@ return {
           layout_config = { height = 0.5, width = 0.95 },
           hidden = true,
           no_ignore = true,
-          file_ignore_patterns = file_ignore_patterns
+          file_ignore_patterns = file_ignore_patterns,
+          mappings = {
+            n = {
+              ['dd'] = require('telescope.actions').delete_buffer
+            }, -- n
+            i = {
+              ['dd'] = require('telescope.actions').delete_buffer
+            } -- i
+          },
         },
 
         extensions = {
