@@ -30,7 +30,7 @@ keymap.set("n", "<leader>cfn", '<cmd>let @+ = expand("%:t")<cr>')
 keymap.set("n", "<leader>rcfn", '<cmd>let @+ = expand("%")<cr>')
 
 -- update current buffer
-keymap.set('n', "<leader>ub", '<cmd>bufdo e<cr>')
+keymap.set('n', "<leader>ub", '<cmd>checktime<cr>')
 
 ----------------------
 -- Plugin Keybinds

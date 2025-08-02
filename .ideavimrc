@@ -52,6 +52,7 @@ nmap <ESC> :nohlsearch<cr>
 nmap cow <Action>(EditorToggleUseSoftWraps)
 nmap col <Action>(EditorToggleShowWhitespaces)
 
+nmap s <Action>(flash.search)
 
 nmap <leader>sh :split<cr>
 nmap <leader>sv :vsplit<cr>
@@ -88,7 +89,6 @@ nmap \R <Action>(Run)
 nmap \d <Action>(DebugClass)
 nmap \D <Action>(Debug)
 nmap \c <Action>(CheckStyleCurrentFileAction)
-map s <Action>(flash.search)
 
 " bookmark
 nmap <leader>bt <Action>(ToggleBookmark)

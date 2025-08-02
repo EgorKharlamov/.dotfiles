@@ -50,7 +50,7 @@ return {
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup({
-        ensure_installed = { "lua_ls", "ts_ls", "volar", "eslint", "stylelint_lsp", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls" }
+        ensure_installed = { "lua_ls", "ts_ls", "volar", "eslint", "stylelint_lsp", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls", "tailwindcss" }
       })
     end
   },
@@ -79,21 +79,21 @@ return {
       })
 
       -- neoconf.setup({})
-      mason_lspconfig.setup_handlers({
-        function(server_name)
-          local server_config = {
-            -- capabilities = capabilities,
-            -- on_attach = on_attach_default_lsp,
-          }
-          -- if neoconf.get(server_name .. ".disable") then
-          --   return
-          -- end
-          if server_name == "volar" then
-            server_config.filetypes = { 'vue', 'typescript', 'javascript' }
-          end
-          lspconfig[server_name].setup(server_config)
-        end,
+      mason_lspconfig.setup({
+        ensure_installed = { "lua_ls", "ts_ls", "volar", "eslint", "stylelint_lsp", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls", "tailwindcss" }
       })
+
+      local installed_servers = mason_lspconfig.get_installed_servers()
+
+      for _, server_name in ipairs(installed_servers) do
+        local server_config = {
+          -- тут можно добавлять capabilities, on_attach и т.п.
+        }
+        if server_name == "volar" then
+          server_config.filetypes = { 'vue', 'typescript', 'javascript' }
+        end
+        lspconfig[server_name].setup(server_config)
+      end
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -101,14 +101,14 @@ return {
       })
 
       local mason_registry = require('mason-registry')
-      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
-          '/node_modules/@vue/language-server'
+      -- local vue_language_server_path = mason_registry.get_package('volar'):get_install_path() ..
+      --     '/node_modules/@vue/language-server'
       lspconfig.ts_ls.setup({
         init_options = {
           plugins = {
             {
               name = '@vue/typescript-plugin',
-              location = vue_language_server_path,
+              -- location = vue_language_server_path,
               languages = { 'vue' },
             },
           },
@@ -172,7 +172,7 @@ return {
       })
       lspconfig.volar.setup({
         capabilities = capabilities,
-        filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+        filetypes = { "vue", "javascript", "typescript" },
         init_options = {
           vue = {
             hybridMode = false,
@@ -214,6 +214,18 @@ return {
       lspconfig.cssls.setup({
         capabilities = capabilities,
         filetypes = { "css", "less", "sass", "scss", "vue" },
+      })
+
+      lspconfig.tailwindcss.setup({
+        settings = {
+          tailwindCSS = {
+            experimental = {
+              classRegex = {
+                "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)",
+              },
+            },
+          },
+        },
       })
 
       lspconfig.emmet_ls.setup({

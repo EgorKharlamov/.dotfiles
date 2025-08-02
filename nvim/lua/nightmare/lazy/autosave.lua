@@ -6,8 +6,6 @@ return {
     enabled = true,
     trigger_events = {
       immediate_save = { "BufLeave", "FocusLost" },
-      defer_save = {},
-      cancel_defered_save = {},
     }
   },
 }

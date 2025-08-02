@@ -16,7 +16,7 @@ alias pacyun="sudo pacman -Syyu --noconfirm && yun"
 alias clean_cache="rm -rf ~/.cache/* && paccache -r"
 alias speedUp='xset r rate 250 50'
 alias chromedev="google-chrome --disable-web-security --user-data-dir=$HOME/chrome"
-alias r="yazi"
+alias y="yazi"
 
 alias vueDev="echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
 alias myip="echo 94.73.247.54"
@@ -66,7 +66,6 @@ alias srr="sudo ranger"
 alias h="htop"
 
 alias packey="sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys --keyserver hkps://keyserver.ubuntu.com && sudo pacman -Syy"
-alias y="yay -S"
 alias yn="yay -S --noconfirm"
 alias yl="yay -S --noconfirm --needed - < ~/.pkglist.txt"
 alias ys="yay"
