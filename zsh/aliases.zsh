@@ -13,7 +13,7 @@ alias showclock="tty-clock -scb"
 alias calendar="calcurse"
 alias updg='sudo apt-get update && sudo apt-get upgrade -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh'
 alias pacyun="sudo pacman -Syyu --noconfirm && yun"
-alias clean_cache="rm -rf ~/.cache/* && paccache -r"
+alias clean_cache="rm -rf ~/.cache/* && paccache -r && yay -Sc --noconfirm"
 alias speedUp='xset r rate 250 50'
 alias chromedev="google-chrome --disable-web-security --user-data-dir=$HOME/chrome"
 alias y="yazi"
@@ -24,6 +24,8 @@ alias mysensors="while true; do sensors | grep Core && echo; sleep 5; done"
 
 alias giteahelp="echo 'git clone ssh://git@gitea.hecate.dev:2221/egorkharlamov/{repos}'"
 
+alias shtd="$HOME/Dropbox/.scripts/autoshutdown.sh"
+alias shtdr="$HOME/Dropbox/.scripts/autoshutdown.sh -r"
 alias ez="nvim $HOME/.zshrc"
 alias ezd="nvim $HOME/.dotfiles/zsh/aliases.zsh"
 alias sz="source $HOME/.zshrc"
@@ -56,6 +58,33 @@ apti() {
 }
 apdg() {
   sudo apt update && sudo apt upgrade -yV && sudo apt autoremove
+}
+vpsina_traffic() {
+  local do_filter=false
+  local server="vpsina"
+  
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -s)
+        do_filter=true
+        shift
+        ;;
+      -k)
+        server="vpnks"
+        shift
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  local output=$(ssh $server "vnstat ens3 -m")
+  if [[ "$do_filter" == true ]]; then
+    echo "$output" | rg "$(date +%Y-%m)"
+  else
+    echo "$output"
+  fi
 }
 
 alias tm="tmux attach || tmux new -s work"

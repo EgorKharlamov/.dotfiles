@@ -16,6 +16,11 @@ set rnu
 set idearefactormode=keep
 set ideajoin
 
+set matchit
+set peekaboo
+set mini-ai
+set dial
+
 nmap <leader>no :NERDTree<CR>
 nmap <leader>nc :NERDTree<CR> <esc> :NERDTreeClose<CR>
 nmap <leader>nf :NERDTreeFind<CR>
@@ -72,7 +77,7 @@ nmap <leader>t <Action>(FileStructurePopup)
 nmap <leader>T <Action>(GotoSymbol)
 nmap <leader>a <Action>(GotoAction)
 nmap <leader>b <Action>(ToggleLineBreakpoint)
-nmap <leader>rrf <Action>(RenameFile)
+map <leader>rrf <Action>(RenameFile)
 
 " code navigation
 nmap \e <Action>(GotoNextError)
@@ -111,6 +116,14 @@ nmap ]m <Action>(MethodDown)
 nmap [c <Action>(VcsShowPrevChangeMarker)
 nmap ]c <Action>(VcsShowNextChangeMarker)
 
+" --dial--
+" Map Ctrl+A to increment
+nnoremap <C-a> :DialIncrement<cr>
+
+" Map Ctrl+X to decrement
+nnoremap <C-x> :DialDecrement<cr>
+" ---------
+
 " GIT
 nmap <leader>gm <Action>(Git.Menu)
 nmap <leader>gb <Action>(Git.Branches)
@@ -130,7 +143,8 @@ nmap g/ <Action>(Find)
 " nnoremap / /
 
 " Reload .ideavimrc
-nmap <leader>R :source ~/.ideavimrc<CR>
+noremap <leader>ez :edit ~/.ideavimrc<CR>
+nmap <leader>sz :source ~/.ideavimrc<CR>
 
 nmap zC <Action>(CollapseRegionRecursively)
 nmap zO <Action>(ExpandRegionRecursively)

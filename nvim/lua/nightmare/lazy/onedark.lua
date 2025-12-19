@@ -58,5 +58,11 @@ return {
       -- vim.cmd('colorscheme github_dark')
     end,
   },
+  {
+    "ellisonleao/gruvbox.nvim",
+    name = 'gruvbox_dark',
+    priority = 1000,
+    config = true
+  },
 
 }

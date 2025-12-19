@@ -67,7 +67,6 @@ return {
     config = function()
       -- local neoconf = require('neoconf')
       local lspconfig = require('lspconfig')
-      local configs = require('lspconfig/configs')
       local mason_lspconfig = require('mason-lspconfig')
       local util = require('lspconfig.util')
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -82,6 +81,12 @@ return {
       mason_lspconfig.setup({
         ensure_installed = { "lua_ls", "ts_ls", "volar", "eslint", "stylelint_lsp", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls", "tailwindcss" }
       })
+
+      -- TODO: https://www.reddit.com/r/neovim/comments/1l05ope/how_to_configure_lsp_natively_neovim_v011/
+      -- vim.lsp.config("*", {})
+      -- vim.lsp.enable({})
+
+      --
 
       local installed_servers = mason_lspconfig.get_installed_servers()
 
