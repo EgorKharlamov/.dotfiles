@@ -54,6 +54,7 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")     -- list open buf
 keymap.set("n", "<leader>fht", "<cmd>Telescope help_tags<cr>")  -- list available help tags
 keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>")
 keymap.set("n", "<leader>tt", "<cmd>Telescope themes<cr>")
+keymap.set("n", "<leader>tout", "<cmd>Telescope aerial<CR>", { desc = "Telescope Aerieal" })
 
 -- bufferline
 keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<cr>")
@@ -84,7 +85,7 @@ keymap.set('n', '<leader>td', function()
 end, { silent = true, noremap = true })
 
 -- outline
-keymap.set("n", "<leader>tou", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+keymap.set("n", "<leader>tou", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerieal" })
 
 -- overseer
 keymap.set("n", "<leader>ra", "<cmd>OverseerRun<CR>")
