@@ -74,6 +74,9 @@ keymap.set("n", "<leader>gg", "<cmd>LazyGit <cr>")
 keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>") -- list available help tags
 keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
+-- format
+keymap.set('n', 'bf', '<cmd>lua vim.lsp.buf.format()<cr>')
+
 -- diagnostic
 keymap.set("n", "<leader>te", "<cmd>lua vim.diagnostic.open_float()<cr>")
 keymap.set('n', '<leader>td', function()
@@ -94,3 +97,10 @@ keymap.set("n", "<leader>zz", "<cmd>ZenMode<CR>")
 local luasnip = require('luasnip')
 keymap.set({ "n" }, "<leader>sn", function() luasnip.jump(1) end, { silent = true })
 keymap.set({ "n" }, "<leader>sp", function() luasnip.jump(-1) end, { silent = true })
+
+-- toggle row wrap
+vim.keymap.set("n", "cow", function()
+  local wrap = vim.wo.wrap
+  vim.wo.wrap = not wrap
+  vim.wo.linebreak = not wrap
+end, { desc = "Toggle soft wrap" })

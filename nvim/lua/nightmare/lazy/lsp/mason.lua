@@ -1,0 +1,43 @@
+return {
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      -- list of servers for mason to install
+      ensure_installed = {
+ "lua_ls", "ts_ls", "vtsls", "vue_ls", "eslint", "stylelint_lsp", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls", "tailwindcss",
+      },
+      automatic_installation = true,
+    },
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = {
+          ui = {
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗",
+            },
+          },
+        },
+      },
+      "neovim/nvim-lspconfig",
+    },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = {
+      ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "isort", -- python formatter
+        "black", -- python formatter
+        "pylint",
+        "eslint_d",
+      },
+    },
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+  },
+}

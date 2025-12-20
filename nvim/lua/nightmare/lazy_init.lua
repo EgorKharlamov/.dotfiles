@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
   {
     { import = "nightmare.lazy" },
-    -- { import = "nightmare.lazy.lsp" }
+    { import = "nightmare.lazy.lsp" }
   },
   {
     checker = {

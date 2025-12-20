@@ -41,6 +41,32 @@ return {
     config = function()
       local cmp = require("cmp")
 
+      local function prefer_fields(entry1, entry2)
+        local kind1 = entry1:get_kind()
+        local kind2 = entry2:get_kind()
+
+        local function score(kind)
+          if kind == cmp.lsp.CompletionItemKind.Field
+             or kind == cmp.lsp.CompletionItemKind.Variable then
+            return 0
+          elseif kind == cmp.lsp.CompletionItemKind.Property then
+            return 1
+          elseif kind == cmp.lsp.CompletionItemKind.Function
+             or kind == cmp.lsp.CompletionItemKind.Method then
+            return 2
+          else
+            return 3
+          end
+        end
+
+        local s1 = score(kind1)
+        local s2 = score(kind2)
+        if s1 ~= s2 then
+          return s1 < s2
+        end
+      end
+
+
       vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
       cmp.setup({
@@ -57,6 +83,19 @@ return {
             return vim_item
           end
         },
+        sorting = {
+            priority_weight = 2,
+            comparators = {
+              prefer_fields,
+              cmp.config.compare.offset,
+              cmp.config.compare.exact,
+              cmp.config.compare.score,
+              cmp.config.compare.kind,
+              cmp.config.compare.sort_text,
+              cmp.config.compare.length,
+              cmp.config.compare.order,
+            },
+          },
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body) -- For `luasnip` users.

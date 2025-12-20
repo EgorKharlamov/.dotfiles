@@ -10,6 +10,12 @@ opt.shiftwidth = 2    -- 2 spaces for indent width
 opt.expandtab = true  -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
+-- swap files
+opt.swapfile = false
+
+-- scrolling
+opt.smoothscroll = true
+
 -- line wrapping
 opt.wrap = true -- enable line wrapping
 
