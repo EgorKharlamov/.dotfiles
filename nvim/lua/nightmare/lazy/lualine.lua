@@ -5,7 +5,8 @@ return {
     local configs = require("lualine")
     configs.setup({
       options = {
-        theme = 'gruvbox'
+        theme = 'onedark'
+        -- theme = 'gruvbox'
       },
       sections = {
         lualine_x = { 'fileformat', 'filetype' },

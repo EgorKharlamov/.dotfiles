@@ -42,7 +42,7 @@ return {
           background = true, -- use background color for virtual text
         },
       })
-      -- vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'onedark'
     end
   },
   {
@@ -63,7 +63,7 @@ return {
     name = 'gruvbox_dark',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'gruvbox'
+      -- vim.cmd.colorscheme 'gruvbox'
     end
   },
 
