@@ -1,3 +1,3 @@
 return {
-  -- capabilities = capabilities,
+	-- capabilities = capabilities,
 }

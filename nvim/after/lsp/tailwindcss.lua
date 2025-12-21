@@ -1,12 +1,12 @@
 return {
-  settings = {
-    tailwindCSS = {
-      experimental = {
-        classRegex = {
-          "clsx\\(([^)]*)\\)",
-          "(?:'|\"|`)([^']*)(?:'|\"|`)",
-        },
-      },
-    },
-  },
+	settings = {
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+					"clsx\\(([^)]*)\\)",
+					"(?:'|\"|`)([^']*)(?:'|\"|`)",
+				},
+			},
+		},
+	},
 }

@@ -1,9 +1,8 @@
 return {
-  -- capabilities = capabilities,
+	-- capabilities = capabilities,
+	diagnostics = {
+		enable = false,
+	},
 
-  diagnostics = {
-    enable = false,
-  },
-
-  -- on_attach = on_attach_default_lsp,
+	-- on_attach = on_attach_default_lsp,
 }

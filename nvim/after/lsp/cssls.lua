@@ -1,4 +1,4 @@
 return {
-  -- capabilities = capabilities,
-  filetypes = { "css", "less", "sass", "scss", "vue" },
+	-- capabilities = capabilities,
+	filetypes = { "css", "less", "sass", "scss", "vue" },
 }
