@@ -76,7 +76,7 @@ keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>") -- list available he
 keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
 -- format
-keymap.set('n', 'bf', '<cmd>lua vim.lsp.buf.format()<cr>')
+keymap.set('n', '<leader>bf', '<cmd>lua vim.lsp.buf.format()<cr>')
 
 -- diagnostic
 keymap.set("n", "<leader>te", "<cmd>lua vim.diagnostic.open_float()<cr>")

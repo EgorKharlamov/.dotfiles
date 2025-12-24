@@ -12,7 +12,7 @@ alias rap="$HOME/Dropbox/.scripts/music/streamRap.sh"
 alias showclock="tty-clock -scb"
 alias calendar="calcurse"
 alias updg='sudo apt-get update && sudo apt-get upgrade -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh'
-alias pacyun="sudo pacman -Syyu --noconfirm && yun"
+alias pacyun="fnm use v24 && sudo pacman -Syyu --noconfirm && yun"
 alias clean_cache="rm -rf ~/.cache/* && paccache -r && yay -Sc --noconfirm"
 alias speedUp='xset r rate 250 50'
 alias chromedev="google-chrome --disable-web-security --user-data-dir=$HOME/chrome"

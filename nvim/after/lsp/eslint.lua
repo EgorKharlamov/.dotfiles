@@ -13,17 +13,17 @@ return {
 	-- end,
 
 	settings = {
-		validate = "on",
+		validate = "off",
 		packageManager = nil,
 		useESLintClass = false,
 		experimental = {
 			useFlatConfig = false,
 		},
 		codeActionOnSave = {
-			enable = true,
+			enable = false,
 			mode = "all",
 		},
-		format = true,
+		format = false,
 		quiet = false,
 		onIgnoredFiles = "off",
 		rulesCustomizations = {},

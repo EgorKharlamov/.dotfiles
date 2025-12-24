@@ -19,11 +19,12 @@ return {
         "make",
         "just",
         "dockerfile",
-        "json"
+        "json",
       },
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
     })
-  end
+    vim.treesitter.language.register("yaml", "yaml.docker-compose")
+  end,
 }

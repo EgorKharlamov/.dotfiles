@@ -4,7 +4,26 @@ return {
     opts = {
       -- list of servers for mason to install
       ensure_installed = {
- "lua_ls", "ts_ls", "vtsls", "vue_ls", "eslint", "stylelint_lsp", "dockerls", "docker_compose_language_service", "jsonls", "css_variables", "cssls", "emmet_ls", "marksman", "rust_analyzer", "bashls", "tailwindcss",
+        "lua_ls",
+        "ts_ls",
+        "vtsls",
+        "vue_ls",
+        "eslint",
+        "stylelint_lsp",
+
+        "docker_language_server",
+        "dockerls",
+        "docker_compose_language_service",
+
+        "jsonls",
+        "css_variables",
+        "cssls",
+        "emmet_ls",
+        "marksman",
+        "rust_analyzer",
+        "bashls",
+        "tailwindcss",
+        "just",
       },
       automatic_installation = true,
     },
