@@ -1,9 +1,9 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.font = wezterm.font 'FiraCode Nerd Font'
-config.font_size = 10.0
-config.line_height = 0.8
+config.font = wezterm.font 'TX-02'
+config.font_size = 12.0
+config.line_height = 0.7
 config.color_scheme = 'One Dark (Gogh)'
 
 config.enable_tab_bar = false

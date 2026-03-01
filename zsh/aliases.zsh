@@ -12,7 +12,6 @@ alias rap="$HOME/Dropbox/.scripts/music/streamRap.sh"
 alias showclock="tty-clock -scb"
 alias calendar="calcurse"
 alias updg='sudo apt-get update && sudo apt-get upgrade -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh'
-alias pacyun="fnm use v24 && sudo pacman -Syyu --noconfirm && yun"
 alias clean_cache="rm -rf ~/.cache/* && paccache -r && yay -Sc --noconfirm"
 alias speedUp='xset r rate 250 50'
 alias chromedev="google-chrome --disable-web-security --user-data-dir=$HOME/chrome"
@@ -33,6 +32,49 @@ alias moon="curl 'wttr.in/Moon'"
 alias lss="ls -sh | sort -h"
 alias duh="du -d 1 -h | sort -h"
 alias porn="mpv 'http://www.pornhub.com/random'"
+
+pacyun() {
+  local NODE_ENV=$(fnm list-remote --lts --latest | sed -n '1s/^v\([0-9.]*\).*$/\1/p')
+  echo_color GREEN "node version set: $NODE_ENV"
+  pyenv shell system
+  echo_color GREEN "pyenv shell system set"
+  fnm install "$NODE_ENV"
+  fnm use "$NODE_ENV"
+  corepack enable
+  sudo pacman -Syyu --noconfirm 
+  yay -Syyu --noconfirm
+  cargo install-update -a
+}
+
+packs() {
+  local available_updates=$($HOME/Dropbox/.scripts/zsh/packs_list.sh)
+  echo_color red "$available_updates" "bold blink"
+}
+
+echo_color() {
+  local arg_color="${1:l}"
+  local arg_text="$2"
+  local arg_style=(${(ps: :)3:l})
+  GREEN=$(tput setaf 10)
+  RED=$(tput setaf 1)
+
+  for S in ${arg_style[@]}; do 
+    tput $S
+  done
+
+  case $arg_color in 
+    green)
+      echo "${GREEN}$arg_text"
+      ;;
+    red)
+      echo "${RED}$arg_text"
+      ;;
+    *)
+      echo "unknown color: $arg_text"
+      ;;
+  esac
+  tput sgr0
+}
 
 esprint () {
   $1 "$HOME/Dropbox/WORK/ectool/sprints/all_sprints.md"
@@ -71,6 +113,10 @@ vpsina_traffic() {
         ;;
       -k)
         server="vpnks"
+        shift
+        ;;
+      -n)
+        server="vpnnikitosik"
         shift
         ;;
       *)
