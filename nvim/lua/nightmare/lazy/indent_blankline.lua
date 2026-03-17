@@ -1,9 +1,51 @@
 return {
   {
-    "lukas-reineke/indent-blankline.nvim",
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     enabled = true,
+    config = function()
+      require("hlchunk").setup({
+        chunk = {
+          enable = true,
+          -- ...
+        },
+        indent = {
+          enable = false,
+          chars = {
+            "│",
+            "¦",
+            "┆",
+            "┊",
+          },
+          style = {
+            vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
+          },
+        },
+        line_num = {
+          enabled = true,
+          style = "#806d9c",
+          use_treesitter = false,
+        },
+        blank = {
+          enabled = true,
+          chars = {
+            " . ",
+          },
+          style = {
+            { bg = "#434437" },
+            { bg = "#2f4440" },
+            { bg = "#433054" },
+            { bg = "#284251" },
+          },
+        },
+      })
+    end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
     dependencies = {
-      'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
+      "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
       "TheGLander/indent-rainbowline.nvim",
     },
     main = "ibl",
@@ -17,7 +59,7 @@ return {
     end,
     -- comment whole function if you wanna rainbow indent
     config = function()
-      local configs = require('ibl')
+      local configs = require("ibl")
       local highlight = {
         "RainbowRed",
         "RainbowYellow",
@@ -28,7 +70,7 @@ return {
         "RainbowCyan",
       }
 
-      local hooks = require "ibl.hooks"
+      local hooks = require("ibl.hooks")
       -- create the highlight groups in the highlight setup hook, so they are reset
       -- every time the colorscheme changes
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
@@ -42,27 +84,26 @@ return {
       end)
 
       vim.g.rainbow_delimiters = { highlight = highlight }
-      configs.setup {
+      configs.setup({
         indent = {
-          highlight = highlight
+          highlight = highlight,
         },
-      }
+      })
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
-    end
+    end,
   },
   {
-    'echasnovski/mini.indentscope',
-    version = '*',
+    "echasnovski/mini.indentscope",
+    version = "*",
     enabled = false,
     config = function()
-      local config = require('mini.indentscope')
+      local config = require("mini.indentscope")
       config.setup({
         symbol = "╎",
         options = {
-          try_as_border = true
+          try_as_border = true,
         },
       })
-    end
-
+    end,
   },
 }

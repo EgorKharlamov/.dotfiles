@@ -160,3 +160,4 @@ eval "$(pyenv init -)"
 export PATH="$PATH:/home/nightmare/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export NEOVIDE_CONFIG="$HOME/.config/neovide/config.toml"
